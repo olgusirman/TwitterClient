@@ -1,0 +1,688 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		22D9BB23E48555EFDE93B289BCCD0D9E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		502E80FAAA0CA175FE0D443B7DFD8A26 /* Pods-VNGRSTwitterClientUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A3434D99CBC8AA653577BABBE2DCBDF8 /* Pods-VNGRSTwitterClientUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5CAB512BE9D62085D20C15A3037FC160 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		78EEB10EFC0C9478D45744FE951862A6 /* Pods-VNGRSTwitterClientUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FB7970B3B5AE57782CFBFAC30F176B /* Pods-VNGRSTwitterClientUITests-dummy.m */; };
+		7B59ABC453F44C3BB8BE510C8338FE35 /* Pods-VNGRSTwitterClientTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2568D3D5F8272939711F33C812CFB3B8 /* Pods-VNGRSTwitterClientTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		96D59CF242F380BC5677415AAB14A295 /* Pods-VNGRSTwitterClient-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D343B0076F6C3B6287F4D1FDB1A2DF6D /* Pods-VNGRSTwitterClient-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5BE778E1C351A75C479FEFB13E05B15 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		B740C463E87EB96730A9BDB38A6E9D4B /* Pods-VNGRSTwitterClient-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FA286E0E6F62AF3D4921D4F98783B7E /* Pods-VNGRSTwitterClient-dummy.m */; };
+		EF2336F158F8779A549E4121D0D67B71 /* Pods-VNGRSTwitterClientTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DB63A431B89B29FBE80D4E5C676E287 /* Pods-VNGRSTwitterClientTests-dummy.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		00FB7970B3B5AE57782CFBFAC30F176B /* Pods-VNGRSTwitterClientUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-VNGRSTwitterClientUITests-dummy.m"; sourceTree = "<group>"; };
+		08517D4E56480FD41BF6A7C5B49B9DCD /* Pods-VNGRSTwitterClientTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-VNGRSTwitterClientTests.debug.xcconfig"; sourceTree = "<group>"; };
+		0FA286E0E6F62AF3D4921D4F98783B7E /* Pods-VNGRSTwitterClient-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-VNGRSTwitterClient-dummy.m"; sourceTree = "<group>"; };
+		18C596A9906C70D0DD2EDF59378CE0AD /* Pods-VNGRSTwitterClient.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-VNGRSTwitterClient.modulemap"; sourceTree = "<group>"; };
+		2568D3D5F8272939711F33C812CFB3B8 /* Pods-VNGRSTwitterClientTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-VNGRSTwitterClientTests-umbrella.h"; sourceTree = "<group>"; };
+		29EB559A6443A9CCCB40E8E22C29E346 /* Pods-VNGRSTwitterClientUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-VNGRSTwitterClientUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		34820952DC96DB19E4A93E02E05324D9 /* Pods-VNGRSTwitterClient-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-VNGRSTwitterClient-acknowledgements.plist"; sourceTree = "<group>"; };
+		3627EF3E71479636E9AE6DBB5EE65D68 /* Pods-VNGRSTwitterClientTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-VNGRSTwitterClientTests.modulemap"; sourceTree = "<group>"; };
+		3A2D42709795B720EFE9E30F2DA1E06E /* Pods_VNGRSTwitterClientTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_VNGRSTwitterClientTests.framework; path = "Pods-VNGRSTwitterClientTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3AC045D37850756A69C47BB9F5A4B07A /* Pods-VNGRSTwitterClientTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-VNGRSTwitterClientTests.release.xcconfig"; sourceTree = "<group>"; };
+		409934CAB8A6FE46B5E3BE4C9CD06B75 /* Pods-VNGRSTwitterClient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-VNGRSTwitterClient.release.xcconfig"; sourceTree = "<group>"; };
+		41BDA8DC3361D244DA41F2CEA51DBE01 /* Pods-VNGRSTwitterClientUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-VNGRSTwitterClientUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		5000AEB65204E03260F42F0931811510 /* Pods-VNGRSTwitterClientTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-VNGRSTwitterClientTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		5486666D0D7428DF86DAD94F17C36554 /* Pods_VNGRSTwitterClientUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_VNGRSTwitterClientUITests.framework; path = "Pods-VNGRSTwitterClientUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		54C8C69831A05CC4051F52473CD66DC9 /* Pods-VNGRSTwitterClientUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-VNGRSTwitterClientUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		5E1BA22D21492168B967E396B6DC7FD5 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		61A15D64F59255EDB9D4E08B4068F8BA /* Pods-VNGRSTwitterClient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-VNGRSTwitterClient.debug.xcconfig"; sourceTree = "<group>"; };
+		6432496C196587E0B1345916BD6EF1FE /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6444FECF92FDC580CC5872480E2EA681 /* Pods-VNGRSTwitterClientTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-VNGRSTwitterClientTests-frameworks.sh"; sourceTree = "<group>"; };
+		64F96FCB00F70BDAC7DE2E120C325ABE /* Pods-VNGRSTwitterClientUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-VNGRSTwitterClientUITests.release.xcconfig"; sourceTree = "<group>"; };
+		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		7DB63A431B89B29FBE80D4E5C676E287 /* Pods-VNGRSTwitterClientTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-VNGRSTwitterClientTests-dummy.m"; sourceTree = "<group>"; };
+		81C6BE472BE9987A68DDCB62342CF407 /* Pods_VNGRSTwitterClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_VNGRSTwitterClient.framework; path = "Pods-VNGRSTwitterClient.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B64F3403A5E5E82E3ACA46BC35F1879 /* Pods-VNGRSTwitterClientUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-VNGRSTwitterClientUITests-frameworks.sh"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		97DFD74AB1E2D360F602B86F04F84527 /* Pods-VNGRSTwitterClientTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-VNGRSTwitterClientTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		A3434D99CBC8AA653577BABBE2DCBDF8 /* Pods-VNGRSTwitterClientUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-VNGRSTwitterClientUITests-umbrella.h"; sourceTree = "<group>"; };
+		B8937583D7EDB2A881BA76CF89769B18 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CBBEF9BCB7ECF299F138DE4FE5A61719 /* Pods-VNGRSTwitterClientTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-VNGRSTwitterClientTests-resources.sh"; sourceTree = "<group>"; };
+		D06B90EF9FA74BDD16593C93FCC7F01E /* Pods-VNGRSTwitterClient-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-VNGRSTwitterClient-frameworks.sh"; sourceTree = "<group>"; };
+		D343B0076F6C3B6287F4D1FDB1A2DF6D /* Pods-VNGRSTwitterClient-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-VNGRSTwitterClient-umbrella.h"; sourceTree = "<group>"; };
+		E940DBA9042E931342FB35DA88A3D6F2 /* Pods-VNGRSTwitterClient-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-VNGRSTwitterClient-resources.sh"; sourceTree = "<group>"; };
+		EC4997E704DD3E8912FE6AA316D39326 /* Pods-VNGRSTwitterClientUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-VNGRSTwitterClientUITests.modulemap"; sourceTree = "<group>"; };
+		ED04D4883E23B5C9A1C2A1764DE256B1 /* Pods-VNGRSTwitterClient-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-VNGRSTwitterClient-acknowledgements.markdown"; sourceTree = "<group>"; };
+		EE2CE45AF964BDB30C8F4522059D45D3 /* Pods-VNGRSTwitterClientUITests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-VNGRSTwitterClientUITests-resources.sh"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		25E70EAC569A4EDA00FE4A2ACD6E99BA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5CAB512BE9D62085D20C15A3037FC160 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3240D96E60C9DD61D6E858AE02E21A68 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22D9BB23E48555EFDE93B289BCCD0D9E /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A67BBB50337B0D14FB5594EEF4540A44 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5BE778E1C351A75C479FEFB13E05B15 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		46C688ADDBEE072BE94D520C11A998C0 /* Pods-VNGRSTwitterClientTests */ = {
+			isa = PBXGroup;
+			children = (
+				6432496C196587E0B1345916BD6EF1FE /* Info.plist */,
+				3627EF3E71479636E9AE6DBB5EE65D68 /* Pods-VNGRSTwitterClientTests.modulemap */,
+				97DFD74AB1E2D360F602B86F04F84527 /* Pods-VNGRSTwitterClientTests-acknowledgements.markdown */,
+				5000AEB65204E03260F42F0931811510 /* Pods-VNGRSTwitterClientTests-acknowledgements.plist */,
+				7DB63A431B89B29FBE80D4E5C676E287 /* Pods-VNGRSTwitterClientTests-dummy.m */,
+				6444FECF92FDC580CC5872480E2EA681 /* Pods-VNGRSTwitterClientTests-frameworks.sh */,
+				CBBEF9BCB7ECF299F138DE4FE5A61719 /* Pods-VNGRSTwitterClientTests-resources.sh */,
+				2568D3D5F8272939711F33C812CFB3B8 /* Pods-VNGRSTwitterClientTests-umbrella.h */,
+				08517D4E56480FD41BF6A7C5B49B9DCD /* Pods-VNGRSTwitterClientTests.debug.xcconfig */,
+				3AC045D37850756A69C47BB9F5A4B07A /* Pods-VNGRSTwitterClientTests.release.xcconfig */,
+			);
+			name = "Pods-VNGRSTwitterClientTests";
+			path = "Target Support Files/Pods-VNGRSTwitterClientTests";
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				CF874142B7F11162249A5F7EFF14C4E6 /* Products */,
+				827BCF783E95FE2EDE778F4562544648 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		827BCF783E95FE2EDE778F4562544648 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				C01FAFC18FF63847270C6FC6D7C8915C /* Pods-VNGRSTwitterClient */,
+				46C688ADDBEE072BE94D520C11A998C0 /* Pods-VNGRSTwitterClientTests */,
+				EB0B8BDCF2F1454034E9A99576AC769B /* Pods-VNGRSTwitterClientUITests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D35AF013A5F0BAD4F32504907A52519E /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C01FAFC18FF63847270C6FC6D7C8915C /* Pods-VNGRSTwitterClient */ = {
+			isa = PBXGroup;
+			children = (
+				5E1BA22D21492168B967E396B6DC7FD5 /* Info.plist */,
+				18C596A9906C70D0DD2EDF59378CE0AD /* Pods-VNGRSTwitterClient.modulemap */,
+				ED04D4883E23B5C9A1C2A1764DE256B1 /* Pods-VNGRSTwitterClient-acknowledgements.markdown */,
+				34820952DC96DB19E4A93E02E05324D9 /* Pods-VNGRSTwitterClient-acknowledgements.plist */,
+				0FA286E0E6F62AF3D4921D4F98783B7E /* Pods-VNGRSTwitterClient-dummy.m */,
+				D06B90EF9FA74BDD16593C93FCC7F01E /* Pods-VNGRSTwitterClient-frameworks.sh */,
+				E940DBA9042E931342FB35DA88A3D6F2 /* Pods-VNGRSTwitterClient-resources.sh */,
+				D343B0076F6C3B6287F4D1FDB1A2DF6D /* Pods-VNGRSTwitterClient-umbrella.h */,
+				61A15D64F59255EDB9D4E08B4068F8BA /* Pods-VNGRSTwitterClient.debug.xcconfig */,
+				409934CAB8A6FE46B5E3BE4C9CD06B75 /* Pods-VNGRSTwitterClient.release.xcconfig */,
+			);
+			name = "Pods-VNGRSTwitterClient";
+			path = "Target Support Files/Pods-VNGRSTwitterClient";
+			sourceTree = "<group>";
+		};
+		CF874142B7F11162249A5F7EFF14C4E6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				81C6BE472BE9987A68DDCB62342CF407 /* Pods_VNGRSTwitterClient.framework */,
+				3A2D42709795B720EFE9E30F2DA1E06E /* Pods_VNGRSTwitterClientTests.framework */,
+				5486666D0D7428DF86DAD94F17C36554 /* Pods_VNGRSTwitterClientUITests.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D35AF013A5F0BAD4F32504907A52519E /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		EB0B8BDCF2F1454034E9A99576AC769B /* Pods-VNGRSTwitterClientUITests */ = {
+			isa = PBXGroup;
+			children = (
+				B8937583D7EDB2A881BA76CF89769B18 /* Info.plist */,
+				EC4997E704DD3E8912FE6AA316D39326 /* Pods-VNGRSTwitterClientUITests.modulemap */,
+				54C8C69831A05CC4051F52473CD66DC9 /* Pods-VNGRSTwitterClientUITests-acknowledgements.markdown */,
+				41BDA8DC3361D244DA41F2CEA51DBE01 /* Pods-VNGRSTwitterClientUITests-acknowledgements.plist */,
+				00FB7970B3B5AE57782CFBFAC30F176B /* Pods-VNGRSTwitterClientUITests-dummy.m */,
+				8B64F3403A5E5E82E3ACA46BC35F1879 /* Pods-VNGRSTwitterClientUITests-frameworks.sh */,
+				EE2CE45AF964BDB30C8F4522059D45D3 /* Pods-VNGRSTwitterClientUITests-resources.sh */,
+				A3434D99CBC8AA653577BABBE2DCBDF8 /* Pods-VNGRSTwitterClientUITests-umbrella.h */,
+				29EB559A6443A9CCCB40E8E22C29E346 /* Pods-VNGRSTwitterClientUITests.debug.xcconfig */,
+				64F96FCB00F70BDAC7DE2E120C325ABE /* Pods-VNGRSTwitterClientUITests.release.xcconfig */,
+			);
+			name = "Pods-VNGRSTwitterClientUITests";
+			path = "Target Support Files/Pods-VNGRSTwitterClientUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		33F5CC2EC938B59BF81ED74A91AE644A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				502E80FAAA0CA175FE0D443B7DFD8A26 /* Pods-VNGRSTwitterClientUITests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		99154C5F7124AB3E46FD010A3AA9A616 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7B59ABC453F44C3BB8BE510C8338FE35 /* Pods-VNGRSTwitterClientTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA2A6DF4ED977FBB2D1BBBD234761262 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96D59CF242F380BC5677415AAB14A295 /* Pods-VNGRSTwitterClient-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		5774556589A98947CEF92166EDB99385 /* Pods-VNGRSTwitterClientTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2C71725E6E8BE6CD4ED2DECD9797B235 /* Build configuration list for PBXNativeTarget "Pods-VNGRSTwitterClientTests" */;
+			buildPhases = (
+				303D7905D0C0B8C05C0355840FABC1FC /* Sources */,
+				3240D96E60C9DD61D6E858AE02E21A68 /* Frameworks */,
+				99154C5F7124AB3E46FD010A3AA9A616 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-VNGRSTwitterClientTests";
+			productName = "Pods-VNGRSTwitterClientTests";
+			productReference = 3A2D42709795B720EFE9E30F2DA1E06E /* Pods_VNGRSTwitterClientTests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		6069C60FFA4D4AF8799C66561F40928E /* Pods-VNGRSTwitterClientUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E01FDE13A0DA40B4C8658017FEE9A3A7 /* Build configuration list for PBXNativeTarget "Pods-VNGRSTwitterClientUITests" */;
+			buildPhases = (
+				C83390A06056B30174EEFE9FE026A240 /* Sources */,
+				25E70EAC569A4EDA00FE4A2ACD6E99BA /* Frameworks */,
+				33F5CC2EC938B59BF81ED74A91AE644A /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-VNGRSTwitterClientUITests";
+			productName = "Pods-VNGRSTwitterClientUITests";
+			productReference = 5486666D0D7428DF86DAD94F17C36554 /* Pods_VNGRSTwitterClientUITests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		D12CC353079ECDE784E88F9F1EB1C3D5 /* Pods-VNGRSTwitterClient */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9F4D33A5ABBE41E57E0E2C10041E77DC /* Build configuration list for PBXNativeTarget "Pods-VNGRSTwitterClient" */;
+			buildPhases = (
+				8145D7ADC036F7D1F9C850E89C975E43 /* Sources */,
+				A67BBB50337B0D14FB5594EEF4540A44 /* Frameworks */,
+				DA2A6DF4ED977FBB2D1BBBD234761262 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-VNGRSTwitterClient";
+			productName = "Pods-VNGRSTwitterClient";
+			productReference = 81C6BE472BE9987A68DDCB62342CF407 /* Pods_VNGRSTwitterClient.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = CF874142B7F11162249A5F7EFF14C4E6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D12CC353079ECDE784E88F9F1EB1C3D5 /* Pods-VNGRSTwitterClient */,
+				5774556589A98947CEF92166EDB99385 /* Pods-VNGRSTwitterClientTests */,
+				6069C60FFA4D4AF8799C66561F40928E /* Pods-VNGRSTwitterClientUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		303D7905D0C0B8C05C0355840FABC1FC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF2336F158F8779A549E4121D0D67B71 /* Pods-VNGRSTwitterClientTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8145D7ADC036F7D1F9C850E89C975E43 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B740C463E87EB96730A9BDB38A6E9D4B /* Pods-VNGRSTwitterClient-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C83390A06056B30174EEFE9FE026A240 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				78EEB10EFC0C9478D45744FE951862A6 /* Pods-VNGRSTwitterClientUITests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		15C08418898A81591E87BA7332D6CC25 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3AC045D37850756A69C47BB9F5A4B07A /* Pods-VNGRSTwitterClientTests.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-VNGRSTwitterClientTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-VNGRSTwitterClientTests/Pods-VNGRSTwitterClientTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_VNGRSTwitterClientTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		323A24856F1A4871A780301AF5C02A2A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		3BA74489F0CF125C52B2321BE09D3FFC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 61A15D64F59255EDB9D4E08B4068F8BA /* Pods-VNGRSTwitterClient.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-VNGRSTwitterClient/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-VNGRSTwitterClient/Pods-VNGRSTwitterClient.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_VNGRSTwitterClient;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		483336218E8A42FEE6775871E0EE22DA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 08517D4E56480FD41BF6A7C5B49B9DCD /* Pods-VNGRSTwitterClientTests.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-VNGRSTwitterClientTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-VNGRSTwitterClientTests/Pods-VNGRSTwitterClientTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_VNGRSTwitterClientTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		4A1B4BA2E90D24DC84C6AC7D94C2F496 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 409934CAB8A6FE46B5E3BE4C9CD06B75 /* Pods-VNGRSTwitterClient.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-VNGRSTwitterClient/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-VNGRSTwitterClient/Pods-VNGRSTwitterClient.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_VNGRSTwitterClient;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		54101D8431A073F8E3C40D82A30CF575 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 29EB559A6443A9CCCB40E8E22C29E346 /* Pods-VNGRSTwitterClientUITests.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-VNGRSTwitterClientUITests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-VNGRSTwitterClientUITests/Pods-VNGRSTwitterClientUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_VNGRSTwitterClientUITests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		CA33F186435244FD0FD5B7325332656C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		DB0F8732B4A668F8291A2339799C16CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 64F96FCB00F70BDAC7DE2E120C325ABE /* Pods-VNGRSTwitterClientUITests.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-VNGRSTwitterClientUITests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-VNGRSTwitterClientUITests/Pods-VNGRSTwitterClientUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_VNGRSTwitterClientUITests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2C71725E6E8BE6CD4ED2DECD9797B235 /* Build configuration list for PBXNativeTarget "Pods-VNGRSTwitterClientTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				483336218E8A42FEE6775871E0EE22DA /* Debug */,
+				15C08418898A81591E87BA7332D6CC25 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				323A24856F1A4871A780301AF5C02A2A /* Debug */,
+				CA33F186435244FD0FD5B7325332656C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9F4D33A5ABBE41E57E0E2C10041E77DC /* Build configuration list for PBXNativeTarget "Pods-VNGRSTwitterClient" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3BA74489F0CF125C52B2321BE09D3FFC /* Debug */,
+				4A1B4BA2E90D24DC84C6AC7D94C2F496 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E01FDE13A0DA40B4C8658017FEE9A3A7 /* Build configuration list for PBXNativeTarget "Pods-VNGRSTwitterClientUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				54101D8431A073F8E3C40D82A30CF575 /* Debug */,
+				DB0F8732B4A668F8291A2339799C16CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}
