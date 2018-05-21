@@ -1,3 +1,18 @@
-PODFILE CHECKSUM: fa3d121e6419ce8318942680d39d2f55ddb179b8
+PODS:
+  - Alamofire (4.7.2)
+  - TwitterCore (3.1.0)
+  - TwitterKit (3.3.0):
+    - TwitterCore (>= 3.1.0)
+
+DEPENDENCIES:
+  - Alamofire
+  - TwitterKit
+
+SPEC CHECKSUMS:
+  Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
+  TwitterCore: 644d59e75abccb26cf0a9050d2c4dea0e5412241
+  TwitterKit: a2e60ddcedbf54091eac6f27685ca7a87681e1d7
+
+PODFILE CHECKSUM: fcab4b9ba46cf5a274cf68f5a3e1574c66fe8776
 
 COCOAPODS: 1.4.0
