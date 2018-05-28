@@ -10,86 +10,93 @@ import Foundation
 import Alamofire
 import MapKit
 
-protocol RestEndpoint : URLRequestConvertible {
-    var method : HTTPMethod { get }
-    var path : String { get }
-    var encoding : Alamofire.ParameterEncoding { get }
+protocol RestEndpoint: URLRequestConvertible {
+    var method: HTTPMethod { get }
+    var path: String { get }
+    var encoding: Alamofire.ParameterEncoding { get }
     func asURLRequest() throws -> URLRequest
 }
 
-enum Router : RestEndpoint {
+enum Router: RestEndpoint {
     
-    case clientAdd
-    case updateToken( token : String )
-    case updateLocation ( coordinate : CLLocationCoordinate2D )
-    case bloodDemandGetList( pageIndex : Int, pageSize : Int)
-    case gsmConfirm(code : String)
-    case gsmCreate(phone : String)
+    case authentication()
+    case search(searchRouterObject: SearchRouterObject?)
     
     var method : HTTPMethod {
         switch self {
-        case .clientAdd, .gsmConfirm, .updateToken, .updateLocation:
+        case .authentication:
             return .post
-        case .gsmCreate,.bloodDemandGetList:
+        case .search:
             return .get
         }
     }
     
     var path : String {
         switch self {
-        case .clientAdd, .updateToken, .updateLocation:
-            return "/client/add"
-        case .bloodDemandGetList(let pageIndex,let pageSize):
-            return "/blooddemand/getlist?clientId=\(APIManager().clientId!)&pageIndex=\(pageIndex)&pageSize=\(pageSize)"
-        case .gsmConfirm:
-            return "/confirmation/confirm"
-        case .gsmCreate(let phone):
-            debugPrint(phone)
-            return "/confirmation/createcode"
+        case .authentication:
+            return "/oauth2/token" //https://api.twitter.com/oauth2/token
+        case .search(_):
+            return "/1.1/search/tweets.json" //1.1 calisti ama emin degilim 2.0 i da deneyebilirsin yada silerek deneyebilirsin //https://api.twitter.com/1.1/search/tweets.json
         }
     }
     
     var encoding : ParameterEncoding {
-        return JSONEncoding.default
+        return URLEncoding.default
     }
     
     func asURLRequest() throws -> URLRequest {
         
         let parameters : Parameters? = {
             switch self {
-            case .clientAdd:
-                let param : Parameters = ["":""]
-
+            case .authentication:
+                let parameter: Parameters = ["grant_type":"client_credentials"]
+                return parameter
+            case .search(let searchRouterObject):
+                
+                var param : Parameters = [:]
+                if let query = searchRouterObject?.query {
+                    param["q"] = query
+                }
+                //param["count"] = 20
                 return param
-            case .gsmConfirm(let code):
-                let param : Parameters = ["clientId": APIManager().clientId ?? "" ,"code":code]
-                return param
-            case .updateToken( let token ):
-                let param : Parameters = [ "id" : APIManager().clientId ?? "", "notificationToken" : token]
-                return param
-            case .updateLocation (let location):
-                let param : Parameters = [ "id" : APIManager().clientId ?? "", "latitude" : location.latitude.magnitude, "longitude" : location.longitude.magnitude]
-                return param
-            default:
-                return .none
             }
-            
         }()
         
-        let baseUrl = ""
+        let baseUrl = APIConstants.baseUrl
         let url = try baseUrl.asURL()
         let requestUrl = try url.appendingPathComponent(path).asURL()
         var request = URLRequest(url: requestUrl)
         request.httpMethod = method.rawValue
         
         switch self {
-        case .clientAdd,.gsmConfirm, .updateToken, .updateLocation:
-            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        case .authentication:
+            
+            let key = "NMrMAQcp7YhN2WMNAJYrGdCa6"
+            let secret = "N2Qf4gckLSaV7R3lwyCdb0Hb2plV2TqbFvHIeWAp4Yo9WjJegx"
+            
+            let auth = "Basic " + (key + ":" + secret).base64()
+            
+            request.setValue( "\(auth)", forHTTPHeaderField: "Authorization")
+            request.setValue("application/x-www-form-urlencoded;charset=UTF-8", forHTTPHeaderField: "Content-Type")
+            
             return try encoding.encode(request, with: parameters)
-        case .gsmCreate,.bloodDemandGetList:
-            //request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-            return try encoding.encode(request, with: nil)
+            
+        case .search(_):
+            
+            //let defaults = UserDefaults.standard
+            //let accessToken = defaults.object(forKey: "access_token") as! String //TODO: get access_token from keychain
+            
+            //request.setValue( "Bearer \(accessToken)", forHTTPHeaderField: "Authorization")
+            //request.setValue("application/x-www-form-urlencoded;charset=UTF-8", forHTTPHeaderField: "Content-Type")
+            
+            return try encoding.encode(request, with: parameters)
         }
     }
+}
+
+extension String {
     
+    func base64() -> String {
+        return Data(self.utf8).base64EncodedString()
+    }
 }

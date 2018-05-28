@@ -81,9 +81,12 @@
                                                             <constraint firstAttribute="width" secondItem="Wzf-4T-Rh0" secondAttribute="height" multiplier="1:1" id="4Ta-Sk-cL4"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bCy-jA-sfx" customClass="TWTRLogInButton">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bCy-jA-sfx">
                                                         <rect key="frame" x="164" y="512.5" width="46" height="30"/>
                                                         <state key="normal" title="Button"/>
+                                                        <connections>
+                                                            <action selector="loginPressed:" destination="XBq-D7-XBN" eventType="touchUpInside" id="PJW-al-eSA"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>

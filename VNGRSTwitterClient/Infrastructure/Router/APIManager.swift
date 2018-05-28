@@ -8,162 +8,64 @@
 
 import Foundation
 import Alamofire
+import TwitterKit
 
-final class APIManager {
+final public class APIManager {
     
     typealias success = ( ( _ responseObject : Any) -> Void )
-    typealias failure = ( ( _ error : Error?, _ message : String? ) -> Void )
+    typealias failure = ( ( _ error : Error? ) -> Void )
     
-    var clientId : String? = ""
+    static let shared = APIManager()
     
-    //MARK: Initial ClientId
-    /*
-    func getClientId(completion : ( () -> Void )? = nil ) {
-        
-        Alamofire.request(Router.clientAdd).responseJSON { (dataResponse) in
-            switch dataResponse.result {
-            case .success:
-                if let json = dataResponse.result.value {
-                    if let responseBase = Mapper<ResponseBase>().map(JSONObject: json) {
-                        guard let isOk = responseBase.isOk else { return }
-                        if isOk {
-                            
-                            if self.clientId == nil {
-                                self.clientId = responseBase.data?.id
-                                completion?()
-                            }
-                        } else {
-                            debugPrint("Error occured, Message :\(String(describing: responseBase.message))")
-                        }
-                    }
-                }
-                
-            case .failure(let error):
-                print(error)
-                ErrorManager.error(with: dataResponse)
-            }
+    lazy var manager: Alamofire.SessionManager = {
+        let manager = SessionManager.default
+        if let authToken = UserDefaults.standard.string(forKey: "access_token") { // TODO: use that access_token KEYCHAIN
+            manager.adapter = AccessTokenAdapter(accessToken: authToken)
         }
-    }
+        return manager
+    }()
     
-    //MARK: SMS
-    
-    func requestCode(with phone : String, successHandler : @escaping success , failure : @escaping failure ) {
+    func authentication(successHandler : @escaping success , failure : @escaping failure) {
         
-        let url = "\(HKConstants.baseUrl)/confirmation/createcode?clientId=\(APIManager().clientId!)&phone=%2B\(phone)"
-        //TODO: add parameter but phone number is not a valid error occured, what should be done?
-        
-        Alamofire.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseJSON { (dataResponse) in
+        Alamofire.request(Router.authentication()).responseJSON { (dataResponse) in
             
             switch dataResponse.result {
             case .success:
-                if let json = dataResponse.result.value {
-                    if let responseBase = Mapper<ResponseBase>().map(JSONObject: json) {
-                        
-                        guard let isOk = responseBase.isOk else { return }
-                        if isOk {
-                            successHandler(responseBase)
-                        } else {
-                            debugPrint("Error occured, Message :\(String(describing: responseBase.message))")
-                            let error = NSError(domain: "isOkError", code: 0, userInfo: [NSLocalizedDescriptionKey:"Bir hata oluştu"])
-                            failure(error, String(describing: responseBase.message) )
-                        }
+                print("Token validation successful")
+                debugPrint(dataResponse.result.value)
+                
+                // Serialize
+                if let valueDict = dataResponse.result.value as? [String:String] {
+                    if let accessToken = valueDict["access_token"] {
+                        let defaults = UserDefaults.standard
+                        defaults.set(accessToken, forKey: "access_token")
+                        defaults.synchronize()
+                        debugPrint("Successfully Authhenticate 👍")
+                        successHandler(accessToken)
                     }
                 }
+                
             case .failure(let error):
-                failure(error, error.localizedDescription)
                 print(error)
-                ErrorManager.error(with: dataResponse)
             }
         }
     }
     
-    func sendCode(with code : String, successHandler : @escaping success , failure : @escaping failure) {
+    func search( searchRouterObject: SearchRouterObject, successHandler : @escaping success , failure : @escaping failure) {
         
-        Alamofire.request(Router.gsmConfirm(code: code)).responseJSON { (dataResponse) in
+        manager.request(Router.search(searchRouterObject: searchRouterObject)).responseJSON { (dataResponse) in
             
             switch dataResponse.result {
             case .success:
-                
-                if let json = dataResponse.result.value {
-                    print("JSON: \(json)")
-                    if let responseBase = Mapper<ResponseBase>().map(JSONObject: json) {
-                        guard let isOk = responseBase.isOk else { return }
-                        if isOk {
-                            successHandler(responseBase)
-                        } else {
-                            debugPrint("Error occured, Message :\(String(describing: responseBase.message))")
-                            let error = NSError(domain: "isOkError", code: 0, userInfo: [NSLocalizedDescriptionKey:"Kod yollanırken bir hata oluştu."])
-                            failure(error, String(describing: responseBase.message) )
-                        }
-                    }
-                }
+                print("Search Successful")
+                debugPrint(dataResponse.result.value)
             case .failure(let error):
-                failure(error, error.localizedDescription)
-                ErrorManager.error(with: dataResponse)
-            }
-        }
-    }
-    
-    //MARK: Send Demand
-    func postBloodDemand(with donorSeeker : DonorSeeker, successHandler : @escaping success , failure : @escaping failure) {
-        
-        Alamofire.request(Router.bloodDemand(donorSeeker: donorSeeker)).responseJSON { (dataResponse) in
-            switch dataResponse.result {
-            case .success:
-                
-                if let json = dataResponse.result.value {
-                    if let responseBase = Mapper<ResponseBase>().map(JSONObject: json) {
-                        guard let isOk = responseBase.isOk else { return }
-                        if isOk {
-                            successHandler(responseBase)
-                        } else {
-                            debugPrint("Error occured, Message :\(String(describing: responseBase.message))")
-                            
-                            let error = NSError(domain: "isOkError", code: 0, userInfo: [NSLocalizedDescriptionKey:"Kan isteğiniz yollanırken bir hata oluştu."])
-                            failure(error, String(describing: responseBase.message) )
-                        }
-                    }
-                }
-            case .failure(let error):
-                failure(error, error.localizedDescription)
                 print(error)
-                ErrorManager.error(with: dataResponse)
             }
         }
     }
-    
-    func getSeekers(pageIndex : Int, pageSize : Int,successHandler : @escaping success , failure : @escaping failure) {
-        
-        let url = "\(HKConstants.baseUrl)/blooddemand/getlist?clientId=\(APIManager().clientId!)&pageIndex=\(pageIndex)&pageSize=\(pageSize)"
-        
-        Alamofire.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseJSON { (dataResponse) in
-            
-            switch dataResponse.result {
-            case .success:
-                
-                if let json = dataResponse.result.value {
-                    if let responseBase = Mapper<ResponseBase>().map(JSONObject: json) {
-                        
-                        guard let isOk = responseBase.isOk else { return }
-                        
-                        if isOk {
-                            successHandler(responseBase)
-                        } else {
-                            debugPrint("Error occured, Message :\(String(describing: responseBase.message))")
-                            let error = NSError(domain: "isOkError", code: 0, userInfo: [NSLocalizedDescriptionKey:"Kan isteğiniz yollanırken bir hata oluştu."])
-                            failure(error, String(describing: responseBase.message) )
-                        }
-                    }
-                }
-                
-            case .failure(let error):
-                failure(error, error.localizedDescription)
-                print(error)
-                ErrorManager.error(with: dataResponse)
-            }
-        }
-    }
-    */
     
 }
+
+
 

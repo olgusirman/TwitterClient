@@ -21,6 +21,9 @@
 		1AAC9ECD20B365D100DA4723 /* ErrorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAC9ECA20B365D000DA4723 /* ErrorManager.swift */; };
 		1AAC9ECE20B365D100DA4723 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAC9ECB20B365D000DA4723 /* APIManager.swift */; };
 		1AAC9ECF20B365D100DA4723 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAC9ECC20B365D000DA4723 /* Router.swift */; };
+		1AAC9ED120B368D200DA4723 /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAC9ED020B368D200DA4723 /* APIConstants.swift */; };
+		1AAC9ED420B3698700DA4723 /* SearchRouterObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAC9ED320B3698700DA4723 /* SearchRouterObject.swift */; };
+		1AAC9EDA20B495AA00DA4723 /* AccessTokenAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAC9ED920B495AA00DA4723 /* AccessTokenAdapter.swift */; };
 		393E451E6AE4E8D87690D8F1 /* Pods_VNGRSTwitterClientTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71CA060F729E442E16AC4B2D /* Pods_VNGRSTwitterClientTests.framework */; };
 		B17C3576CED1522A8D6FA130 /* Pods_VNGRSTwitterClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6755D19E9ED0B7B2FA51E320 /* Pods_VNGRSTwitterClient.framework */; };
 		B4587B0F3C80D55713879F65 /* Pods_VNGRSTwitterClientUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7F03AE51300769B34826706 /* Pods_VNGRSTwitterClientUITests.framework */; };
@@ -64,6 +67,9 @@
 		1AAC9ECA20B365D000DA4723 /* ErrorManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorManager.swift; sourceTree = "<group>"; };
 		1AAC9ECB20B365D000DA4723 /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		1AAC9ECC20B365D000DA4723 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		1AAC9ED020B368D200DA4723 /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
+		1AAC9ED320B3698700DA4723 /* SearchRouterObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRouterObject.swift; sourceTree = "<group>"; };
+		1AAC9ED920B495AA00DA4723 /* AccessTokenAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessTokenAdapter.swift; sourceTree = "<group>"; };
 		4A12AAB7ECCA13F6A453038A /* Pods-VNGRSTwitterClientUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VNGRSTwitterClientUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VNGRSTwitterClientUITests/Pods-VNGRSTwitterClientUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		5DFF34972FCFB9FD56228E2D /* Pods-VNGRSTwitterClient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VNGRSTwitterClient.release.xcconfig"; path = "Pods/Target Support Files/Pods-VNGRSTwitterClient/Pods-VNGRSTwitterClient.release.xcconfig"; sourceTree = "<group>"; };
 		6237EA0AAB5868A9BEC57F28 /* Pods-VNGRSTwitterClientUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VNGRSTwitterClientUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-VNGRSTwitterClientUITests/Pods-VNGRSTwitterClientUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -130,7 +136,6 @@
 			children = (
 				1AAC9EC820B3659400DA4723 /* Infrastructure */,
 				1AAC9EBD20B34ED300DA4723 /* Login */,
-				1A31B77E20AE25EC004A7E06 /* AppDelegate.swift */,
 				1A31B78020AE25EC004A7E06 /* MasterViewController.swift */,
 				1A31B78220AE25EC004A7E06 /* DetailViewController.swift */,
 				1A31B78420AE25EC004A7E06 /* Main.storyboard */,
@@ -162,7 +167,6 @@
 		1AAC9EBD20B34ED300DA4723 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				1AAC9EC320B362F700DA4723 /* Shared */,
 				1AAC9EC020B34EFC00DA4723 /* Controller */,
 				1AAC9EBE20B34EDE00DA4723 /* Login.storyboard */,
 			);
@@ -180,6 +184,7 @@
 		1AAC9EC320B362F700DA4723 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				1AAC9ED220B3694C00DA4723 /* Objects */,
 				1AAC9EC720B3634000DA4723 /* Protocols */,
 				1AAC9EC420B362FB00DA4723 /* Views */,
 			);
@@ -204,6 +209,8 @@
 		1AAC9EC820B3659400DA4723 /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
+				1A31B77E20AE25EC004A7E06 /* AppDelegate.swift */,
+				1AAC9EC320B362F700DA4723 /* Shared */,
 				1AAC9EC920B365BF00DA4723 /* Router */,
 			);
 			path = Infrastructure;
@@ -212,11 +219,21 @@
 		1AAC9EC920B365BF00DA4723 /* Router */ = {
 			isa = PBXGroup;
 			children = (
+				1AAC9ED920B495AA00DA4723 /* AccessTokenAdapter.swift */,
+				1AAC9ED020B368D200DA4723 /* APIConstants.swift */,
 				1AAC9ECB20B365D000DA4723 /* APIManager.swift */,
 				1AAC9ECA20B365D000DA4723 /* ErrorManager.swift */,
 				1AAC9ECC20B365D000DA4723 /* Router.swift */,
 			);
 			path = Router;
+			sourceTree = "<group>";
+		};
+		1AAC9ED220B3694C00DA4723 /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				1AAC9ED320B3698700DA4723 /* SearchRouterObject.swift */,
+			);
+			path = Objects;
 			sourceTree = "<group>";
 		};
 		20986CB398BD89D082B6EA16 /* Pods */ = {
@@ -550,9 +567,12 @@
 				1AAC9EC620B3631300DA4723 /* ConstraintView.swift in Sources */,
 				1AAC9EC220B34F0B00DA4723 /* LoginViewController.swift in Sources */,
 				1A31B78320AE25EC004A7E06 /* DetailViewController.swift in Sources */,
+				1AAC9ED120B368D200DA4723 /* APIConstants.swift in Sources */,
 				1A31B78120AE25EC004A7E06 /* MasterViewController.swift in Sources */,
 				1A31B77F20AE25EC004A7E06 /* AppDelegate.swift in Sources */,
 				1AAC9ECE20B365D100DA4723 /* APIManager.swift in Sources */,
+				1AAC9EDA20B495AA00DA4723 /* AccessTokenAdapter.swift in Sources */,
+				1AAC9ED420B3698700DA4723 /* SearchRouterObject.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
