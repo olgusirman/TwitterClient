@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import TwitterKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDelegate {
@@ -18,9 +17,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     // MARK: Delegates
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        
-        //configureSplitViewController()
-        //TWTRTwitter.sharedInstance().start(withConsumerKey: "1z3Rhvy1zenJk2mTPRcyDdPK6", consumerSecret: "TVZsQqtS1BRyYv3p37K1KwlZXqMCfog4YaJakEfp74nv2gsE2l")
         
         return true
     }
@@ -35,14 +31,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
             return true
         }
         return false
-    }
-    
-}
-
-extension AppDelegate {
-    
-    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
-        return TWTRTwitter.sharedInstance().application(app, open: url, options: options)
     }
     
 }

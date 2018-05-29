@@ -8,27 +8,28 @@
 
 import Foundation
 import Alamofire
-import TwitterKit
 
 final public class APIManager {
     
+    // Handler typealiases
     typealias success = ( ( _ responseObject : Any) -> Void )
     typealias failure = ( ( _ error : Error? ) -> Void )
     
-    static let shared = APIManager()
+    // MARK: - Properties
+    static let shared = APIManager() // TODO: Use dependency injection instead
     
     lazy var manager: Alamofire.SessionManager = {
         let manager = SessionManager.default
-        if let authToken = UserDefaults.standard.string(forKey: "access_token") { // TODO: use that access_token KEYCHAIN
+        if let authToken = UserDefaults.standard.string(forKey: "access_token") { // TODO: use KEYCHAIN for that "access_token"
             manager.adapter = AccessTokenAdapter(accessToken: authToken)
         }
         return manager
     }()
     
+    // MARK: - Functions
     func authentication(successHandler : @escaping success , failure : @escaping failure) {
         
         Alamofire.request(Router.authentication()).responseJSON { (dataResponse) in
-            
             switch dataResponse.result {
             case .success:
                 print("Token validation successful")
@@ -44,7 +45,6 @@ final public class APIManager {
                         successHandler(accessToken)
                     }
                 }
-                
             case .failure(let error):
                 print(error)
             }
@@ -54,7 +54,6 @@ final public class APIManager {
     func search( searchRouterObject: SearchRouterObject, successHandler : @escaping success , failure : @escaping failure) {
         
         manager.request(Router.search(searchRouterObject: searchRouterObject)).responseJSON { (dataResponse) in
-            
             switch dataResponse.result {
             case .success:
                 print("Search Successful")
@@ -64,7 +63,6 @@ final public class APIManager {
             }
         }
     }
-    
 }
 
 

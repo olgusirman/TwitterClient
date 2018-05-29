@@ -134,11 +134,9 @@
 		1A31B77D20AE25EB004A7E06 /* VNGRSTwitterClient */ = {
 			isa = PBXGroup;
 			children = (
+				1A58801B20BC99140050315C /* Main */,
 				1AAC9EC820B3659400DA4723 /* Infrastructure */,
 				1AAC9EBD20B34ED300DA4723 /* Login */,
-				1A31B78020AE25EC004A7E06 /* MasterViewController.swift */,
-				1A31B78220AE25EC004A7E06 /* DetailViewController.swift */,
-				1A31B78420AE25EC004A7E06 /* Main.storyboard */,
 				1A31B78720AE25EC004A7E06 /* Assets.xcassets */,
 				1A31B78920AE25EC004A7E06 /* LaunchScreen.storyboard */,
 				1A31B78C20AE25EC004A7E06 /* Info.plist */,
@@ -162,6 +160,16 @@
 				1A31B7A220AE25EC004A7E06 /* Info.plist */,
 			);
 			path = VNGRSTwitterClientUITests;
+			sourceTree = "<group>";
+		};
+		1A58801B20BC99140050315C /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				1A31B78420AE25EC004A7E06 /* Main.storyboard */,
+				1A31B78020AE25EC004A7E06 /* MasterViewController.swift */,
+				1A31B78220AE25EC004A7E06 /* DetailViewController.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 		1AAC9EBD20B34ED300DA4723 /* Login */ = {
@@ -455,14 +463,12 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-VNGRSTwitterClient/Pods-VNGRSTwitterClient-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${PODS_ROOT}/TwitterCore/iOS/TwitterCore.framework",
-				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework",
+				"${BUILT_PRODUCTS_DIR}/PKHUD/PKHUD.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwitterCore.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwitterKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PKHUD.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

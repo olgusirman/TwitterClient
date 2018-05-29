@@ -6,9 +6,9 @@ target 'VNGRSTwitterClient' do
   use_frameworks!
 
   # Pods for VNGRSTwitterClient
-  pod 'TwitterKit'
   pod 'Alamofire'
-
+  pod 'PKHUD', '~> 5.0'
+  
   target 'VNGRSTwitterClientTests' do
     inherit! :search_paths
     # Pods for testing
