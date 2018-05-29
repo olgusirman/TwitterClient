@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AlamofireNetworkActivityIndicator
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDelegate {
@@ -16,7 +17,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     
     // MARK: Delegates
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+
+        configureNetworkActivityIndicatorManager()
+
+        //Check token exist and prepare for fetch tweets
+        
         
         return true
     }
@@ -35,6 +40,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     
 }
 
+// MARK: - Configuration Helpers
 extension AppDelegate {
     
     fileprivate func configureSplitViewController() {
@@ -42,6 +48,10 @@ extension AppDelegate {
         let navigationController = splitViewController.viewControllers[splitViewController.viewControllers.count-1] as! UINavigationController
         navigationController.topViewController!.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem
         splitViewController.delegate = self
+    }
+    
+    fileprivate func configureNetworkActivityIndicatorManager() {
+        NetworkActivityIndicatorManager.shared.startDelay = 1.0
     }
     
 }

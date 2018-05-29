@@ -7,8 +7,9 @@ target 'VNGRSTwitterClient' do
 
   # Pods for VNGRSTwitterClient
   pod 'Alamofire'
-  pod 'PKHUD', '~> 5.0'
-  
+  pod 'AlamofireNetworkActivityIndicator', '~> 2.2'
+  pod 'AlamofireImage', '~> 3.3'
+
   target 'VNGRSTwitterClientTests' do
     inherit! :search_paths
     # Pods for testing
