@@ -29,7 +29,28 @@ final public class APIManager {
     // MARK: - Functions
     func authentication(successHandler : @escaping success , failure : @escaping failure) {
         
-        Alamofire.request(Router.authentication()).responseJSON { (dataResponse) in
+        Alamofire.request(Router.authentication()).validate().responseCodable { (response: DataResponse<AuthObject>) in
+            
+            switch response.result {
+            case .success:
+                
+                // Serialize
+                if let accessToken = response.value?.accessToken {
+                    successHandler(accessToken)
+                } else {
+                    //not Mapped
+                }
+                
+            case .failure(let error):
+                print(error)
+                failure(error)
+            }
+        }
+        
+        /*
+        Alamofire.request(Router.authentication()).validate().responseJSON { (dataResponse) in
+            ErrorManager.error(with: dataResponse)
+            
             switch dataResponse.result {
             case .success:
                 print("Token validation successful")
@@ -42,24 +63,27 @@ final public class APIManager {
                         defaults.set(accessToken, forKey: "access_token")
                         defaults.synchronize()
                         debugPrint("Successfully Authhenticate 👍")
-                        successHandler(accessToken)
+                        //successHandler(accessToken)
                     }
                 }
             case .failure(let error):
                 print(error)
             }
-        }
+        }*/
+        
     }
     
     func search( searchRouterObject: SearchRouterObject, successHandler : @escaping success , failure : @escaping failure) {
         
-        manager.request(Router.search(searchRouterObject: searchRouterObject)).responseJSON { (dataResponse) in
+        manager.request(Router.search(searchRouterObject: searchRouterObject)).validate().responseJSON { (dataResponse) in
+            ErrorManager.error(with: dataResponse)
             switch dataResponse.result {
             case .success:
                 print("Search Successful")
                 debugPrint(dataResponse.result.value)
             case .failure(let error):
                 print(error)
+                failure(error)
             }
         }
     }

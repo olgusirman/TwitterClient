@@ -52,6 +52,7 @@ extension AppDelegate {
     
     fileprivate func configureNetworkActivityIndicatorManager() {
         NetworkActivityIndicatorManager.shared.startDelay = 1.0
+        NetworkActivityIndicatorManager.shared.completionDelay = 0.1
     }
     
 }
