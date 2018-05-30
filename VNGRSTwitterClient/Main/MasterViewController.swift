@@ -2,20 +2,39 @@
 //  MasterViewController.swift
 //  VNGRSTwitterClient
 //
-//  Created by Olgu SIRMAN on 18.05.2018.
+//  Created by Olgu SIRMAN on 18.05.2018.§
 //  Copyright © 2018 Olgu SIRMAN. All rights reserved.
 //
 
 import UIKit
 
-final class MasterViewController: UITableViewController {
+final class MasterViewController: UIViewController {
     
-    var detailViewController: DetailViewController? = nil
-    var tweets = [Tweet]()
+    // MARK: - Properties
+    @IBOutlet fileprivate weak var tableView: UITableView!
     
+    fileprivate var detailViewController: DetailViewController? = nil
+    fileprivate var tweets = [Tweet]()
+    
+    // MARK - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        configureTableView()
+        fetchTweets()
+        
+        if let split = splitViewController {
+            let controllers = split.viewControllers
+            detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
+        }
+    }
+    
+    fileprivate func configureTableView() {
+        tableView.estimatedRowHeight = 100.0
+        tableView.rowHeight = UITableViewAutomaticDimension
+    }
+    
+    private func fetchTweets() {
         let searchObject = SearchRouterObject(query: "wwdc2018")
         APIManager.shared.search(searchRouterObject: searchObject, successHandler: { (tweets) in
             if let tweets = tweets {
@@ -25,16 +44,6 @@ final class MasterViewController: UITableViewController {
             
         }, failure: { error in
         })
-        
-        if let split = splitViewController {
-            let controllers = split.viewControllers
-            detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
-        }
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        clearsSelectionOnViewWillAppear = splitViewController!.isCollapsed
-        super.viewWillAppear(animated)
     }
     
     // MARK: - Segues
@@ -51,27 +60,30 @@ final class MasterViewController: UITableViewController {
         }
     }
     
-    // MARK: - Table View
+}
+
+// MARK: - TableViewDataSource , TableViewDelegate
+extension MasterViewController: UITableViewDataSource, UITableViewDelegate {
     
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tweets.count
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let object = tweets[indexPath.row]
-        cell.textLabel!.text = object.text
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! TweetCell
+        
+        let tweet = tweets[indexPath.row]
+        cell.configure(tweet: tweet)
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "showDetail", sender: nil)
     }
     
 }

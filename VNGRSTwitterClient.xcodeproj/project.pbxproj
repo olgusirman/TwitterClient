@@ -12,6 +12,7 @@
 		1A2046B420BF45DA00ECDB87 /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2046B320BF45DA00ECDB87 /* Media.swift */; };
 		1A2046B620BF461D00ECDB87 /* Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2046B520BF461D00ECDB87 /* Size.swift */; };
 		1A2046B820BF56D400ECDB87 /* BaseObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2046B720BF56D400ECDB87 /* BaseObject.swift */; };
+		1A2046BE20BF601400ECDB87 /* TweetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2046BD20BF601400ECDB87 /* TweetCell.swift */; };
 		1A31B77F20AE25EC004A7E06 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A31B77E20AE25EC004A7E06 /* AppDelegate.swift */; };
 		1A31B78120AE25EC004A7E06 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A31B78020AE25EC004A7E06 /* MasterViewController.swift */; };
 		1A31B78320AE25EC004A7E06 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A31B78220AE25EC004A7E06 /* DetailViewController.swift */; };
@@ -61,6 +62,7 @@
 		1A2046B320BF45DA00ECDB87 /* Media.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Media.swift; sourceTree = "<group>"; };
 		1A2046B520BF461D00ECDB87 /* Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Size.swift; sourceTree = "<group>"; };
 		1A2046B720BF56D400ECDB87 /* BaseObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseObject.swift; sourceTree = "<group>"; };
+		1A2046BD20BF601400ECDB87 /* TweetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetCell.swift; sourceTree = "<group>"; };
 		1A31B77B20AE25EB004A7E06 /* VNGRSTwitterClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VNGRSTwitterClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A31B77E20AE25EC004A7E06 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1A31B78020AE25EC004A7E06 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
@@ -147,6 +149,21 @@
 			path = Auth;
 			sourceTree = "<group>";
 		};
+		1A2046BB20BF5FED00ECDB87 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		1A2046BC20BF5FF200ECDB87 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1A2046BD20BF601400ECDB87 /* TweetCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		1A31B77220AE25EB004A7E06 = {
 			isa = PBXGroup;
 			children = (
@@ -203,6 +220,8 @@
 		1A58801B20BC99140050315C /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				1A2046BC20BF5FF200ECDB87 /* View */,
+				1A2046BB20BF5FED00ECDB87 /* Controller */,
 				1A31B78420AE25EC004A7E06 /* Main.storyboard */,
 				1A31B78020AE25EC004A7E06 /* MasterViewController.swift */,
 				1A31B78220AE25EC004A7E06 /* DetailViewController.swift */,
@@ -638,6 +657,7 @@
 				1A31B78120AE25EC004A7E06 /* MasterViewController.swift in Sources */,
 				1A31B77F20AE25EC004A7E06 /* AppDelegate.swift in Sources */,
 				1AC73EE420BDE178007D07B0 /* AuthObject.swift in Sources */,
+				1A2046BE20BF601400ECDB87 /* TweetCell.swift in Sources */,
 				1AAC9ECE20B365D100DA4723 /* APIManager.swift in Sources */,
 				1A2046B420BF45DA00ECDB87 /* Media.swift in Sources */,
 				1AC73EEB20BDE4E4007D07B0 /* BackendError.swift in Sources */,

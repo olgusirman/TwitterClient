@@ -8,11 +8,25 @@
 
 import UIKit
 
-class DetailViewController: UIViewController {
+final class DetailViewController: UIViewController {
 
+    // MARK - Properties
     @IBOutlet weak var detailDescriptionLabel: UILabel!
+    
+    var detailItem: Tweet? {
+        didSet {
+            // Update the view.
+            configureView()
+        }
+    }
 
+    // MARK: - Lifecycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        configureView()
+    }
 
+    // MARK - UpdateUI
     func configureView() {
         // Update the user interface for the detail item.
         if let detail = detailItem {
@@ -21,25 +35,5 @@ class DetailViewController: UIViewController {
             }
         }
     }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        configureView()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-    var detailItem: Tweet? {
-        didSet {
-            // Update the view.
-            configureView()
-        }
-    }
-
-
 }
 
