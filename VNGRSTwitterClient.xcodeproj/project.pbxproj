@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A2046A620BF397600ECDB87 /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2046A520BF397600ECDB87 /* Tweet.swift */; };
+		1A2046B220BF458B00ECDB87 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2046B120BF458B00ECDB87 /* Entity.swift */; };
+		1A2046B420BF45DA00ECDB87 /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2046B320BF45DA00ECDB87 /* Media.swift */; };
+		1A2046B620BF461D00ECDB87 /* Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2046B520BF461D00ECDB87 /* Size.swift */; };
+		1A2046B820BF56D400ECDB87 /* BaseObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2046B720BF56D400ECDB87 /* BaseObject.swift */; };
 		1A31B77F20AE25EC004A7E06 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A31B77E20AE25EC004A7E06 /* AppDelegate.swift */; };
 		1A31B78120AE25EC004A7E06 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A31B78020AE25EC004A7E06 /* MasterViewController.swift */; };
 		1A31B78320AE25EC004A7E06 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A31B78220AE25EC004A7E06 /* DetailViewController.swift */; };
@@ -51,6 +56,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1A2046A520BF397600ECDB87 /* Tweet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
+		1A2046B120BF458B00ECDB87 /* Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
+		1A2046B320BF45DA00ECDB87 /* Media.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Media.swift; sourceTree = "<group>"; };
+		1A2046B520BF461D00ECDB87 /* Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Size.swift; sourceTree = "<group>"; };
+		1A2046B720BF56D400ECDB87 /* BaseObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseObject.swift; sourceTree = "<group>"; };
 		1A31B77B20AE25EB004A7E06 /* VNGRSTwitterClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VNGRSTwitterClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A31B77E20AE25EC004A7E06 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1A31B78020AE25EC004A7E06 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
@@ -117,6 +127,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1A2046B920BF570D00ECDB87 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				1A2046B720BF56D400ECDB87 /* BaseObject.swift */,
+				1A2046B120BF458B00ECDB87 /* Entity.swift */,
+				1A2046B320BF45DA00ECDB87 /* Media.swift */,
+				1A2046B520BF461D00ECDB87 /* Size.swift */,
+				1A2046A520BF397600ECDB87 /* Tweet.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		1A2046BA20BF571300ECDB87 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				1AC73EE320BDE178007D07B0 /* AuthObject.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
 		1A31B77220AE25EB004A7E06 = {
 			isa = PBXGroup;
 			children = (
@@ -249,8 +279,9 @@
 		1AAC9ED220B3694C00DA4723 /* Objects */ = {
 			isa = PBXGroup;
 			children = (
+				1A2046BA20BF571300ECDB87 /* Auth */,
+				1A2046B920BF570D00ECDB87 /* Search */,
 				1AAC9ED320B3698700DA4723 /* SearchRouterObject.swift */,
-				1AC73EE320BDE178007D07B0 /* AuthObject.swift */,
 				1AC73EEA20BDE4E4007D07B0 /* BackendError.swift */,
 			);
 			path = Objects;
@@ -485,12 +516,14 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireNetworkActivityIndicator/AlamofireNetworkActivityIndicator.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireNetworkActivityIndicator.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -591,17 +624,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				1AAC9ECF20B365D100DA4723 /* Router.swift in Sources */,
+				1A2046B820BF56D400ECDB87 /* BaseObject.swift in Sources */,
 				1AAC9ECD20B365D100DA4723 /* ErrorManager.swift in Sources */,
 				1AAC9EC620B3631300DA4723 /* ConstraintView.swift in Sources */,
 				1AC73EE920BDE485007D07B0 /* DataRequestExtension.swift in Sources */,
 				1AAC9EC220B34F0B00DA4723 /* LoginViewController.swift in Sources */,
+				1A2046A620BF397600ECDB87 /* Tweet.swift in Sources */,
 				1A31B78320AE25EC004A7E06 /* DetailViewController.swift in Sources */,
+				1A2046B220BF458B00ECDB87 /* Entity.swift in Sources */,
 				1AAC9ED120B368D200DA4723 /* APIConstants.swift in Sources */,
 				1AC73EE620BDE421007D07B0 /* ResponseObjectSerializable.swift in Sources */,
+				1A2046B620BF461D00ECDB87 /* Size.swift in Sources */,
 				1A31B78120AE25EC004A7E06 /* MasterViewController.swift in Sources */,
 				1A31B77F20AE25EC004A7E06 /* AppDelegate.swift in Sources */,
 				1AC73EE420BDE178007D07B0 /* AuthObject.swift in Sources */,
 				1AAC9ECE20B365D100DA4723 /* APIManager.swift in Sources */,
+				1A2046B420BF45DA00ECDB87 /* Media.swift in Sources */,
 				1AC73EEB20BDE4E4007D07B0 /* BackendError.swift in Sources */,
 				1AAC9EDA20B495AA00DA4723 /* AccessTokenAdapter.swift in Sources */,
 				1AAC9ED420B3698700DA4723 /* SearchRouterObject.swift in Sources */,

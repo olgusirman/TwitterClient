@@ -10,6 +10,7 @@ import Foundation
 import Alamofire
 
 extension DataRequest {
+    
     func responseObject<T: ResponseObjectSerializable>(
         queue: DispatchQueue? = nil,
         completionHandler: @escaping (DataResponse<T>) -> Void)
@@ -25,7 +26,7 @@ extension DataRequest {
                 return .failure(BackendError.jsonSerialization(error: result.error!))
             }
             
-            guard let response = response, let responseObject = T(response: response, representation: jsonObject) else {
+            guard let responseObject = T(representation: jsonObject) else {
                 return .failure(BackendError.objectSerialization(reason: "JSON could not be serialized: \(jsonObject)"))
             }
             

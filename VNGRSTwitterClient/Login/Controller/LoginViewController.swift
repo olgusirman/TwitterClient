@@ -15,15 +15,20 @@ final class LoginViewController: UIViewController {
         
         APIManager.shared.authentication(successHandler: { (data) in
             
-            let searchObject = SearchRouterObject(query: "istanbul")
-            APIManager.shared.search(searchRouterObject: searchObject, successHandler: { (response) in
-                debugPrint(response)
-            }, failure: { error in
-                debugPrint(error)
-            })
+            // after successfull login present the
+            self.presentMain()
             
         }) { (error) in
             
         }
     }
+    
+    private func presentMain() {
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        guard let initialViewController = storyboard.instantiateInitialViewController() else { return } // TODO: use logger
+        self.present(initialViewController, animated: true, completion: nil)
+        
+    }
+    
 }

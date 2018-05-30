@@ -8,6 +8,7 @@
 
 import Foundation
 import Alamofire
+import ObjectMapper
 
 final public class APIManager {
     
@@ -36,6 +37,7 @@ final public class APIManager {
                 
                 // Serialize
                 if let accessToken = response.value?.accessToken {
+                    debugPrint("Successfully Authhenticate 👍")
                     successHandler(accessToken)
                 } else {
                     //not Mapped
@@ -46,41 +48,20 @@ final public class APIManager {
                 failure(error)
             }
         }
-        
-        /*
-        Alamofire.request(Router.authentication()).validate().responseJSON { (dataResponse) in
-            ErrorManager.error(with: dataResponse)
-            
-            switch dataResponse.result {
-            case .success:
-                print("Token validation successful")
-                debugPrint(dataResponse.result.value)
-                
-                // Serialize
-                if let valueDict = dataResponse.result.value as? [String:String] {
-                    if let accessToken = valueDict["access_token"] {
-                        let defaults = UserDefaults.standard
-                        defaults.set(accessToken, forKey: "access_token")
-                        defaults.synchronize()
-                        debugPrint("Successfully Authhenticate 👍")
-                        //successHandler(accessToken)
-                    }
-                }
-            case .failure(let error):
-                print(error)
-            }
-        }*/
-        
     }
     
-    func search( searchRouterObject: SearchRouterObject, successHandler : @escaping success , failure : @escaping failure) {
+    func search( searchRouterObject: SearchRouterObject, successHandler : @escaping ( (_ tweets : [Tweet]?) -> Void ) , failure : @escaping failure) {
         
         manager.request(Router.search(searchRouterObject: searchRouterObject)).validate().responseJSON { (dataResponse) in
             ErrorManager.error(with: dataResponse)
             switch dataResponse.result {
             case .success:
                 print("Search Successful")
-                debugPrint(dataResponse.result.value)
+                
+                if let base = Mapper<BaseObject>().map(JSONObject: dataResponse.result.value) {
+                    successHandler(base.statuses)
+                }
+                
             case .failure(let error):
                 print(error)
                 failure(error)

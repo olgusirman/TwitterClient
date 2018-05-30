@@ -6,9 +6,16 @@ target 'VNGRSTwitterClient' do
   use_frameworks!
 
   # Pods for VNGRSTwitterClient
+  
+  # Service
   pod 'Alamofire'
   pod 'AlamofireNetworkActivityIndicator', '~> 2.2'
   pod 'AlamofireImage', '~> 3.3'
+  
+  # Utilities
+  pod 'ObjectMapper'
+
+  # UI
 
   target 'VNGRSTwitterClientTests' do
     inherit! :search_paths

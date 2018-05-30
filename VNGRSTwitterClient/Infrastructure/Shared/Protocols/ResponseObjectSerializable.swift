@@ -9,5 +9,5 @@
 import Foundation
 
 protocol ResponseObjectSerializable {
-    init?(response: HTTPURLResponse, representation: Any)
+    init?(representation: Any)
 }
