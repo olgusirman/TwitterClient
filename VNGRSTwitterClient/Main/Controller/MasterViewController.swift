@@ -7,14 +7,18 @@
 //
 
 import UIKit
+import RxCocoa
+import RxSwift
 
 final class MasterViewController: UIViewController {
     
     // MARK: - Properties
     @IBOutlet fileprivate weak var tableView: UITableView!
+    @IBOutlet fileprivate weak var searchBar: UISearchBar!
     
     fileprivate var detailViewController: DetailViewController? = nil
     fileprivate var tweets = [Tweet]()
+    fileprivate var filteredTweets = [Tweet]()
     
     // MARK - Lifecycle
     fileprivate lazy var refreshControl: UIRefreshControl = {
@@ -22,17 +26,36 @@ final class MasterViewController: UIViewController {
         refreshControl.addTarget(self, action: #selector(self.fetchTweets), for: .valueChanged)
         return refreshControl
     }()
+    fileprivate let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         configureTableView()
         fetchTweets()
+        configureSearch()
         
         if let split = splitViewController {
             let controllers = split.viewControllers
             detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
         }
+    }
+    
+    fileprivate func configureSearch() {
+        
+        searchBar.rx.text
+            .orEmpty
+            .throttle(0.7, scheduler: MainScheduler.instance)
+            .distinctUntilChanged()
+            .subscribe { [unowned self] (query) in
+                
+                //debugPrint(query)
+                
+                self.filteredTweets = self.tweets.search(query: query)
+                self.tableView.reloadData()
+                
+            }.disposed(by: disposeBag)
+        
     }
     
     fileprivate func configureTableView() {
@@ -57,6 +80,7 @@ final class MasterViewController: UIViewController {
         
         if let tweets = tweets {
             self.tweets.append(contentsOf: tweets)
+            self.filteredTweets.append(contentsOf: tweets)
         }
         
         self.tableView.reloadData()
@@ -69,7 +93,7 @@ final class MasterViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetail" {
             if let indexPath = tableView.indexPathForSelectedRow {
-                let object = tweets[indexPath.row]
+                let object = filteredTweets[indexPath.row]
                 let controller = (segue.destination as! UINavigationController).topViewController as! DetailViewController
                 controller.detailItem = object
                 controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
@@ -88,14 +112,14 @@ extension MasterViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tweets.count
+        return filteredTweets.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! TweetCell
         
-        let tweet = tweets[indexPath.row]
+        let tweet = filteredTweets[indexPath.row]
         cell.configure(tweet: tweet)
         return cell
     }
@@ -106,4 +130,3 @@ extension MasterViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
 }
-

@@ -38,6 +38,8 @@
 		7DA2B0D420C2182D008657F4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA2B0D320C2182D008657F4 /* User.swift */; };
 		7DA2B0D720C2A30B008657F4 /* UserProfileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA2B0D620C2A30B008657F4 /* UserProfileImageView.swift */; };
 		7DA2B0D920C2A4D3008657F4 /* Roundable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA2B0D820C2A4D3008657F4 /* Roundable.swift */; };
+		7DA2B0DB20C2BE37008657F4 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA2B0DA20C2BE37008657F4 /* StringExtensions.swift */; };
+		7DA2B0DD20C2C09B008657F4 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA2B0DC20C2C09B008657F4 /* ArrayExtension.swift */; };
 		B17C3576CED1522A8D6FA130 /* Pods_VNGRSTwitterClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6755D19E9ED0B7B2FA51E320 /* Pods_VNGRSTwitterClient.framework */; };
 		B4587B0F3C80D55713879F65 /* Pods_VNGRSTwitterClientUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7F03AE51300769B34826706 /* Pods_VNGRSTwitterClientUITests.framework */; };
 /* End PBXBuildFile section */
@@ -102,6 +104,8 @@
 		7DA2B0D320C2182D008657F4 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		7DA2B0D620C2A30B008657F4 /* UserProfileImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileImageView.swift; sourceTree = "<group>"; };
 		7DA2B0D820C2A4D3008657F4 /* Roundable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Roundable.swift; sourceTree = "<group>"; };
+		7DA2B0DA20C2BE37008657F4 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
+		7DA2B0DC20C2C09B008657F4 /* ArrayExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
 		916E1E79D4AC046172EF3706 /* Pods-VNGRSTwitterClientTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VNGRSTwitterClientTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VNGRSTwitterClientTests/Pods-VNGRSTwitterClientTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A169C5C159CC922AB3C7C381 /* Pods-VNGRSTwitterClientTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VNGRSTwitterClientTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-VNGRSTwitterClientTests/Pods-VNGRSTwitterClientTests.release.xcconfig"; sourceTree = "<group>"; };
 		C7F03AE51300769B34826706 /* Pods_VNGRSTwitterClientUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VNGRSTwitterClientUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -319,6 +323,8 @@
 			isa = PBXGroup;
 			children = (
 				1AC73EE820BDE485007D07B0 /* DataRequestExtension.swift */,
+				7DA2B0DA20C2BE37008657F4 /* StringExtensions.swift */,
+				7DA2B0DC20C2C09B008657F4 /* ArrayExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -553,6 +559,8 @@
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireNetworkActivityIndicator/AlamofireNetworkActivityIndicator.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -560,6 +568,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireNetworkActivityIndicator.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -681,8 +691,10 @@
 				1AAC9ECE20B365D100DA4723 /* APIManager.swift in Sources */,
 				1A2046B420BF45DA00ECDB87 /* Media.swift in Sources */,
 				1AC73EEB20BDE4E4007D07B0 /* BackendError.swift in Sources */,
+				7DA2B0DB20C2BE37008657F4 /* StringExtensions.swift in Sources */,
 				1AAC9EDA20B495AA00DA4723 /* AccessTokenAdapter.swift in Sources */,
 				1AAC9ED420B3698700DA4723 /* SearchRouterObject.swift in Sources */,
+				7DA2B0DD20C2C09B008657F4 /* ArrayExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

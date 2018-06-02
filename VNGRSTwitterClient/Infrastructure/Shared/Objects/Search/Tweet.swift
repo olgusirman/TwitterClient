@@ -9,7 +9,7 @@
 import Foundation
 import ObjectMapper
 
-struct Tweet: Mappable {
+class Tweet: Mappable {
     
     var id: Int?
     var id_str: String?
@@ -17,12 +17,12 @@ struct Tweet: Mappable {
     var entities: Entity?
     var user: User?
     
-    init?(map: Map) {
+    required init?(map: Map) {
         
     }
     
     // Mappable
-    mutating func mapping(map: Map) {
+    func mapping(map: Map) {
         self.id  <- map["id"]
         self.id_str <- map["id_str"]
         self.text <- map["text"]

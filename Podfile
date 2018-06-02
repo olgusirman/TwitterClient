@@ -14,7 +14,9 @@ target 'VNGRSTwitterClient' do
   
   # Utilities
   pod 'ObjectMapper'
-
+  pod 'RxSwift'
+  pod 'RxCocoa'
+  
   # UI
 
   target 'VNGRSTwitterClientTests' do

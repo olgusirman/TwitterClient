@@ -15,7 +15,7 @@ final class LoginViewController: UIViewController {
         
         APIManager.shared.authentication(successHandler: { (data) in
             
-            // after successfull login present the
+            // after successfull login present the Main
             self.presentMain()
             
         }) { (error) in

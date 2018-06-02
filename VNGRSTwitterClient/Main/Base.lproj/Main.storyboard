@@ -42,22 +42,32 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VZI-RA-z12">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <searchBar key="tableHeaderView" contentMode="redraw" searchBarStyle="minimal" placeholder="Tweets.." id="IaC-E0-RUg">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    <color key="barTintColor" red="0.17254901959999999" green="0.46274509800000002" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                    <scopeButtonTitles>
+                                        <string>Title</string>
+                                        <string>Title</string>
+                                    </scopeButtonTitles>
+                                </searchBar>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="89" id="FSz-Bx-pj8" customClass="TweetCell" customModule="VNGRSTwitterClient" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="89"/>
+                                        <rect key="frame" x="0.0" y="84" width="375" height="89"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FSz-Bx-pj8" id="zod-0s-1N9">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="88.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8eT-TM-1qX">
-                                                    <rect key="frame" x="46" y="8" width="598" height="20.5"/>
+                                                    <rect key="frame" x="72" y="8" width="280" height="70"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="800" verticalCompressionResistancePriority="800" translatesAutoresizingMaskIntoConstraints="NO" id="YCw-Rg-e43" customClass="UserProfileImageView" customModule="VNGRSTwitterClient" customModuleProvider="target">
-                                                    <rect key="frame" x="15" y="8" width="23" height="23"/>
+                                                    <rect key="frame" x="15" y="8" width="49" height="49"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="YCw-Rg-e43" secondAttribute="height" multiplier="1:1" id="5gs-DD-oT5"/>
                                                     </constraints>
@@ -97,6 +107,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Tweets" id="d1F-Q5-Mqy"/>
                     <connections>
+                        <outlet property="searchBar" destination="IaC-E0-RUg" id="mST-me-VLx"/>
                         <outlet property="tableView" destination="VZI-RA-z12" id="6wM-K1-cVs"/>
                         <segue destination="vC3-pB-5Vb" kind="showDetail" identifier="showDetail" id="XGQ-rT-RcS"/>
                     </connections>
