@@ -71,8 +71,8 @@ enum Router: RestEndpoint {
         switch self {
         case .authentication:
             
-            let key = "NMrMAQcp7YhN2WMNAJYrGdCa6"
-            let secret = "N2Qf4gckLSaV7R3lwyCdb0Hb2plV2TqbFvHIeWAp4Yo9WjJegx"
+            let key = "rIUalTyVYpBoMcfuUTOiF1r7H"
+            let secret = "keCJoAi3yOz3CtlUjesUYTPnz05iDZyUJGE4rCQOtdjJDjYGZ9"
             
             let auth = "Basic " + (key + ":" + secret).base64()
             

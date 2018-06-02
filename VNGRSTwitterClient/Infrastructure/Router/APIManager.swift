@@ -38,7 +38,9 @@ final public class APIManager {
                 // Serialize
                 if let accessToken = response.value?.accessToken {
                     debugPrint("Successfully Authhenticate 👍")
+                    UserDefaults.standard.set(accessToken, forKey: "access_token")
                     successHandler(accessToken)
+                    
                 } else {
                     //not Mapped
                 }
@@ -52,7 +54,7 @@ final public class APIManager {
     
     func search( searchRouterObject: SearchRouterObject, successHandler : @escaping ( (_ tweets : [Tweet]?) -> Void ) , failure : @escaping failure) {
         
-        manager.request(Router.search(searchRouterObject: searchRouterObject)).validate().responseJSON { (dataResponse) in
+        manager.request(Router.search(searchRouterObject: searchRouterObject)).responseJSON { (dataResponse) in
             ErrorManager.error(with: dataResponse)
             switch dataResponse.result {
             case .success:
@@ -64,6 +66,7 @@ final public class APIManager {
                 
             case .failure(let error):
                 print(error)
+                ErrorManager.error(with: dataResponse)
                 failure(error)
             }
         }

@@ -15,6 +15,7 @@ struct Tweet: Mappable {
     var id_str: String?
     var text: String?
     var entities: Entity?
+    var user: User?
     
     init?(map: Map) {
         
@@ -26,6 +27,7 @@ struct Tweet: Mappable {
         self.id_str <- map["id_str"]
         self.text <- map["text"]
         self.entities <- map["entities"]
+        self.user <- map["user"]
     }
 }
 

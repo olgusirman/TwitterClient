@@ -2,7 +2,7 @@
 //  MasterViewController.swift
 //  VNGRSTwitterClient
 //
-//  Created by Olgu SIRMAN on 18.05.2018.§
+//  Created by Olgu SIRMAN on 18.05.2018.
 //  Copyright © 2018 Olgu SIRMAN. All rights reserved.
 //
 
@@ -17,6 +17,12 @@ final class MasterViewController: UIViewController {
     fileprivate var tweets = [Tweet]()
     
     // MARK - Lifecycle
+    fileprivate lazy var refreshControl: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(self.fetchTweets), for: .valueChanged)
+        return refreshControl
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -32,18 +38,30 @@ final class MasterViewController: UIViewController {
     fileprivate func configureTableView() {
         tableView.estimatedRowHeight = 100.0
         tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.refreshControl = refreshControl
+        tableView.addSubview(self.refreshControl)
     }
     
-    private func fetchTweets() {
+    @objc private func fetchTweets() {
         let searchObject = SearchRouterObject(query: "wwdc2018")
         APIManager.shared.search(searchRouterObject: searchObject, successHandler: { (tweets) in
-            if let tweets = tweets {
-                self.tweets.append(contentsOf: tweets)
-                self.tableView.reloadData()
-            }
+            
+            self.updateUI(tweets: tweets)
             
         }, failure: { error in
+            self.updateUI()
         })
+    }
+    
+    fileprivate func updateUI( tweets: [Tweet]? = nil ) {
+        
+        if let tweets = tweets {
+            self.tweets.append(contentsOf: tweets)
+        }
+        
+        self.tableView.reloadData()
+        self.refreshControl.endRefreshing()
+        
     }
     
     // MARK: - Segues
@@ -84,6 +102,7 @@ extension MasterViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "showDetail", sender: nil)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
 }
