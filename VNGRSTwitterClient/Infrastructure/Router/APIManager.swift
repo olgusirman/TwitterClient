@@ -17,11 +17,11 @@ final public class APIManager {
     typealias failure = ( ( _ error : Error? ) -> Void )
     
     // MARK: - Properties
-    static let shared = APIManager() // TODO: Use dependency injection instead
+    static let shared = APIManager() // Use dependency injection later instead
     
     lazy var manager: Alamofire.SessionManager = {
         let manager = SessionManager.default
-        if let authToken = UserDefaults.standard.string(forKey: "access_token") { // TODO: use KEYCHAIN for that "access_token"
+        if let authToken = UserDefaults.standard.string(forKey: "access_token") { // Use keychain for that "access_token"
             manager.adapter = AccessTokenAdapter(accessToken: authToken)
         }
         return manager
@@ -31,20 +31,16 @@ final public class APIManager {
     func authentication(successHandler : @escaping success , failure : @escaping failure) {
         
         Alamofire.request(Router.authentication()).validate().responseCodable { (response: DataResponse<AuthObject>) in
-            
             switch response.result {
             case .success:
-                
                 // Serialize
                 if let accessToken = response.value?.accessToken {
                     debugPrint("Successfully Authhenticate 👍")
                     UserDefaults.standard.set(accessToken, forKey: "access_token")
                     successHandler(accessToken)
-                    
                 } else {
                     //not Mapped
                 }
-                
             case .failure(let error):
                 print(error)
                 failure(error)
@@ -58,12 +54,9 @@ final public class APIManager {
             ErrorManager.error(with: dataResponse)
             switch dataResponse.result {
             case .success:
-                print("Search Successful")
-                
                 if let base = Mapper<BaseObject>().map(JSONObject: dataResponse.result.value) {
                     successHandler(base.statuses)
                 }
-                
             case .failure(let error):
                 print(error)
                 ErrorManager.error(with: dataResponse)

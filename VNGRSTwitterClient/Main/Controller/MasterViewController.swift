@@ -29,12 +29,6 @@ final class MasterViewController: UIViewController {
     fileprivate var sinceId = 0
     fileprivate var isLoading = false
     
-    fileprivate lazy var refreshControl: UIRefreshControl = {
-        let refreshControl = UIRefreshControl()
-        refreshControl.addTarget(self, action: #selector(self.fetchTweets(searchText:)), for: .valueChanged)
-        return refreshControl
-    }()
-    
     // Private Constants
     fileprivate enum ControllerConstants {
         static let tweetCellIdentifier = "tweetCell"
@@ -48,7 +42,7 @@ final class MasterViewController: UIViewController {
         super.viewDidLoad()
         configureSplitViewController()
         configureTableView()
-        fetchTweets(searchText: ControllerConstants.initialSearchText)
+        fetchTweets(searchText: ControllerConstants.initialSearchText) { isSuccess, tweets in }
         configureSearch()
     }
     
@@ -64,6 +58,32 @@ final class MasterViewController: UIViewController {
             controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
             controller.navigationItem.leftItemsSupplementBackButton = true
         }
+    }
+    
+    func fetchTweets( searchText: String, completionHandler: @escaping ( _ isFetched: Bool, _ tweets:[Tweet]?) -> Void ) {
+        
+        guard !searchText.isEmpty && !self.isLoading else {
+            // Maybe show emptyDataSet there
+            completionHandler(false, nil)
+            return
+        }
+        
+        // Create a searchObject and fetch tweets
+        let searchObject = SearchRouterObject(query: searchText)
+        
+        //VNGRS geocode
+        //Decimal Values
+        //Latitude =    41.020121
+        //Longitude =    28.888878
+        isLoading = true
+        
+        APIManager.shared.search(searchRouterObject: searchObject!, successHandler: { (tweets) in
+            self.updateUI(tweets: tweets)
+            completionHandler(true, tweets)
+        }, failure: { error in
+            self.updateUI()
+            completionHandler(false, nil)
+        })
     }
     
 }
@@ -96,7 +116,7 @@ extension MasterViewController {
             .subscribe { [unowned self] (query) in
                 
                 if let element = query.element {
-                    self.fetchTweets(searchText: element)
+                    self.fetchTweets(searchText: element) { isSuccess, tweets in }
                     debugPrint("query: \(element)")
                 }
                 
@@ -107,31 +127,6 @@ extension MasterViewController {
     fileprivate func configureTableView() {
         tableView.estimatedRowHeight = 100.0
         tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.refreshControl = refreshControl
-        tableView.addSubview(self.refreshControl)
-    }
-    
-    @objc private func fetchTweets( searchText: String) {
-        
-        guard !searchText.isEmpty && !self.isLoading else {
-            // Maybe show emptyDataSet there
-            return
-        }
-        
-        // Create a searchObject and fetch tweets
-        let searchObject = SearchRouterObject(query: searchText)
-        
-        //VNGRS geocode
-        //Decimal Values
-        //Latitude =    41.020121
-        //Longitude =    28.888878
-        isLoading = true
-        
-        APIManager.shared.search(searchRouterObject: searchObject!, successHandler: { (tweets) in
-            self.updateUI(tweets: tweets)
-        }, failure: { error in
-            self.updateUI()
-        })
     }
     
     fileprivate func updateUI( tweets: [Tweet]? = nil ) {
@@ -144,7 +139,6 @@ extension MasterViewController {
         
         self.isLoading = false
         self.tableView.reloadData()
-        self.refreshControl.endRefreshing()
     }
     
     fileprivate func appendMoreTweets() {
@@ -166,7 +160,6 @@ extension MasterViewController {
                 tweets.removeFirst()
                 self.tweets.append(contentsOf: tweets)
                 self.tableView.reloadData()
-                self.refreshControl.endRefreshing()
             }
             self.isLoading = false
             
@@ -244,7 +237,7 @@ extension MasterViewController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let searchText = searchBar.text, tweets.count != 0 else { return }
-        fetchTweets(searchText: searchText)
+        fetchTweets(searchText: searchText) { isSuccess, tweets in }
         self.view.endEditing(true)
     }
     

@@ -6,15 +6,143 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "VNGRSTwitterClient/Main/Controller/MasterViewController.swift"
+            timestampString = "549760242.074747"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
+            landmarkName = "fetchTweets(searchText:completionHandler:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "VNGRSTwitterClient/Main/Controller/MasterViewController.swift"
+            timestampString = "549760242.075196"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
+            landmarkName = "fetchTweets(searchText:completionHandler:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "VNGRSTwitterClient/Main/Controller/MasterViewController.swift"
+            timestampString = "549760242.075527"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
+            landmarkName = "fetchTweets(searchText:completionHandler:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "VNGRSTwitterClient.MasterViewController.fetchTweets(searchText: Swift.String, completionHandler: (Swift.Bool, Swift.Optional&lt;Swift.Array&lt;VNGRSTwitterClient.Tweet&gt;&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "VNGRSTwitterClient"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/olgu/VNGRSTwitterClient/VNGRSTwitterClient/Main/Controller/MasterViewController.swift"
+                  timestampString = "549760242.257017"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "80"
+                  endingLineNumber = "80"
+                  offsetFromSymbolStart = "540">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Array&lt;VNGRSTwitterClient.Tweet&gt;&gt;) -&gt; () in VNGRSTwitterClient.MasterViewController.fetchTweets(searchText: Swift.String, completionHandler: (Swift.Bool, Swift.Optional&lt;Swift.Array&lt;VNGRSTwitterClient.Tweet&gt;&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "VNGRSTwitterClient"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/olgu/VNGRSTwitterClient/VNGRSTwitterClient/Main/Controller/MasterViewController.swift"
+                  timestampString = "549760242.2596591"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "81"
+                  endingLineNumber = "81"
+                  offsetFromSymbolStart = "32">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VNGRSTwitterClient/Infrastructure/Router/APIManager.swift"
-            timestampString = "549736564.581005"
+            timestampString = "549760242.0758539"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "search(searchRouterObject:successHandler:failure:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "VNGRSTwitterClient.APIManager.search(searchRouterObject: VNGRSTwitterClient.SearchRouterObject, successHandler: (Swift.Optional&lt;Swift.Array&lt;VNGRSTwitterClient.Tweet&gt;&gt;) -&gt; (), failure: (Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "VNGRSTwitterClient"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/olgu/VNGRSTwitterClient/VNGRSTwitterClient/Infrastructure/Router/APIManager.swift"
+                  timestampString = "549760242.265835"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "53"
+                  endingLineNumber = "53"
+                  offsetFromSymbolStart = "184">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Any&gt;) -&gt; () in VNGRSTwitterClient.APIManager.search(searchRouterObject: VNGRSTwitterClient.SearchRouterObject, successHandler: (Swift.Optional&lt;Swift.Array&lt;VNGRSTwitterClient.Tweet&gt;&gt;) -&gt; (), failure: (Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "VNGRSTwitterClient"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/olgu/VNGRSTwitterClient/VNGRSTwitterClient/Infrastructure/Router/APIManager.swift"
+                  timestampString = "549760242.268188"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "54"
+                  endingLineNumber = "54"
+                  offsetFromSymbolStart = "40">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "VNGRSTwitterClient/Infrastructure/Router/APIManager.swift"
+            timestampString = "549760242.076185"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
             landmarkName = "search(searchRouterObject:successHandler:failure:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -22,15 +150,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VNGRSTwitterClient/Infrastructure/Router/APIManager.swift"
-            timestampString = "549736564.581092"
+            timestampString = "549760242.076486"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
             landmarkName = "search(searchRouterObject:successHandler:failure:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -38,48 +166,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "VNGRSTwitterClient/Infrastructure/Router/APIManager.swift"
-            timestampString = "549736564.581157"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
-            landmarkName = "authentication(successHandler:failure:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VNGRSTwitterClient/Main/Controller/MasterViewController.swift"
-            timestampString = "549736564.581221"
+            timestampString = "549760242.076782"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "220"
-            endingLineNumber = "220"
-            landmarkName = "tableView(_:cellForRowAt:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "VNGRSTwitterClient/Main/Controller/MasterViewController.swift"
-            timestampString = "549736564.5816129"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "217"
-            endingLineNumber = "217"
-            landmarkName = "tableView(_:cellForRowAt:)"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
+            landmarkName = "fetchTweets(searchText:completionHandler:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

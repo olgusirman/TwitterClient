@@ -39,13 +39,19 @@ final class DetailViewController: UIViewController {
         
         // Tweet userName
         if let userName = tweet.user?.name {
-            self.navigationItem.title = userName
+//            self.navigationItem.title = userName
+            self.navigationController?.navigationItem.title = userName
         }
         
         // Set outlets
         detailImageView.setImage(to: tweet)
         detailImageView.imageHeightConstraint.constant = self.view.bounds.size.height / 2
         label.text = tweet.text
+    }
+    
+    // MARK: - Layout
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .default
     }
 }
 

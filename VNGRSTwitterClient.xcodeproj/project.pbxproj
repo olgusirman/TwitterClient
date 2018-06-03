@@ -19,7 +19,6 @@
 		1A31B78620AE25EC004A7E06 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A31B78420AE25EC004A7E06 /* Main.storyboard */; };
 		1A31B78820AE25EC004A7E06 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A31B78720AE25EC004A7E06 /* Assets.xcassets */; };
 		1A31B78B20AE25EC004A7E06 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A31B78920AE25EC004A7E06 /* LaunchScreen.storyboard */; };
-		1A31B79620AE25EC004A7E06 /* VNGRSTwitterClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A31B79520AE25EC004A7E06 /* VNGRSTwitterClientTests.swift */; };
 		1A31B7A120AE25EC004A7E06 /* VNGRSTwitterClientUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A31B7A020AE25EC004A7E06 /* VNGRSTwitterClientUITests.swift */; };
 		1AAC9EBF20B34EDE00DA4723 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AAC9EBE20B34EDE00DA4723 /* Login.storyboard */; };
 		1AAC9EC220B34F0B00DA4723 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAC9EC120B34F0B00DA4723 /* LoginViewController.swift */; };
@@ -44,6 +43,9 @@
 		7DA2B10120C4258F008657F4 /* TweetImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA2B10020C4258F008657F4 /* TweetImageView.swift */; };
 		7DA2B10320C42ABF008657F4 /* SizeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA2B10220C42ABF008657F4 /* SizeType.swift */; };
 		7DA2B10520C42DB4008657F4 /* Sizes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA2B10420C42DB4008657F4 /* Sizes.swift */; };
+		7DA2B10B20C49E2E008657F4 /* VNGRSLoginTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA2B10A20C49E2E008657F4 /* VNGRSLoginTests.swift */; };
+		7DA2B10F20C4A71C008657F4 /* VNGRSMainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA2B10E20C4A71C008657F4 /* VNGRSMainTests.swift */; };
+		7DA2B11220C4A762008657F4 /* VNGRSRootTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA2B11120C4A762008657F4 /* VNGRSRootTests.swift */; };
 		B17C3576CED1522A8D6FA130 /* Pods_VNGRSTwitterClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6755D19E9ED0B7B2FA51E320 /* Pods_VNGRSTwitterClient.framework */; };
 		B4587B0F3C80D55713879F65 /* Pods_VNGRSTwitterClientUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7F03AE51300769B34826706 /* Pods_VNGRSTwitterClientUITests.framework */; };
 /* End PBXBuildFile section */
@@ -81,7 +83,6 @@
 		1A31B78A20AE25EC004A7E06 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1A31B78C20AE25EC004A7E06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1A31B79120AE25EC004A7E06 /* VNGRSTwitterClientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VNGRSTwitterClientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1A31B79520AE25EC004A7E06 /* VNGRSTwitterClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VNGRSTwitterClientTests.swift; sourceTree = "<group>"; };
 		1A31B79720AE25EC004A7E06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1A31B79C20AE25EC004A7E06 /* VNGRSTwitterClientUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VNGRSTwitterClientUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A31B7A020AE25EC004A7E06 /* VNGRSTwitterClientUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VNGRSTwitterClientUITests.swift; sourceTree = "<group>"; };
@@ -114,6 +115,9 @@
 		7DA2B10020C4258F008657F4 /* TweetImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetImageView.swift; sourceTree = "<group>"; };
 		7DA2B10220C42ABF008657F4 /* SizeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeType.swift; sourceTree = "<group>"; };
 		7DA2B10420C42DB4008657F4 /* Sizes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sizes.swift; sourceTree = "<group>"; };
+		7DA2B10A20C49E2E008657F4 /* VNGRSLoginTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VNGRSLoginTests.swift; sourceTree = "<group>"; };
+		7DA2B10E20C4A71C008657F4 /* VNGRSMainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VNGRSMainTests.swift; sourceTree = "<group>"; };
+		7DA2B11120C4A762008657F4 /* VNGRSRootTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VNGRSRootTests.swift; sourceTree = "<group>"; };
 		916E1E79D4AC046172EF3706 /* Pods-VNGRSTwitterClientTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VNGRSTwitterClientTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VNGRSTwitterClientTests/Pods-VNGRSTwitterClientTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A169C5C159CC922AB3C7C381 /* Pods-VNGRSTwitterClientTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VNGRSTwitterClientTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-VNGRSTwitterClientTests/Pods-VNGRSTwitterClientTests.release.xcconfig"; sourceTree = "<group>"; };
 		C7F03AE51300769B34826706 /* Pods_VNGRSTwitterClientUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VNGRSTwitterClientUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -224,7 +228,9 @@
 		1A31B79420AE25EC004A7E06 /* VNGRSTwitterClientTests */ = {
 			isa = PBXGroup;
 			children = (
-				1A31B79520AE25EC004A7E06 /* VNGRSTwitterClientTests.swift */,
+				7DA2B11020C4A74A008657F4 /* Root */,
+				7DA2B10D20C4A6F0008657F4 /* Main */,
+				7DA2B10C20C4A6E7008657F4 /* Login */,
 				1A31B79720AE25EC004A7E06 /* Info.plist */,
 			);
 			path = VNGRSTwitterClientTests;
@@ -360,6 +366,30 @@
 				7DA2B10020C4258F008657F4 /* TweetImageView.swift */,
 			);
 			path = Controls;
+			sourceTree = "<group>";
+		};
+		7DA2B10C20C4A6E7008657F4 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				7DA2B10A20C49E2E008657F4 /* VNGRSLoginTests.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		7DA2B10D20C4A6F0008657F4 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				7DA2B10E20C4A71C008657F4 /* VNGRSMainTests.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		7DA2B11020C4A74A008657F4 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				7DA2B11120C4A762008657F4 /* VNGRSRootTests.swift */,
+			);
+			path = Root;
 			sourceTree = "<group>";
 		};
 		B26799062D6180F0379D5E6D /* Frameworks */ = {
@@ -720,7 +750,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1A31B79620AE25EC004A7E06 /* VNGRSTwitterClientTests.swift in Sources */,
+				7DA2B10B20C49E2E008657F4 /* VNGRSLoginTests.swift in Sources */,
+				7DA2B10F20C4A71C008657F4 /* VNGRSMainTests.swift in Sources */,
+				7DA2B11220C4A762008657F4 /* VNGRSRootTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -913,7 +945,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 88RJWK6SP6;
+				DEVELOPMENT_TEAM = Q2PYCMCHS6;
 				INFOPLIST_FILE = VNGRSTwitterClientTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sirman.VNGRSTwitterClientTests;
@@ -931,7 +963,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 88RJWK6SP6;
+				DEVELOPMENT_TEAM = Q2PYCMCHS6;
 				INFOPLIST_FILE = VNGRSTwitterClientTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sirman.VNGRSTwitterClientTests;
@@ -948,7 +980,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 88RJWK6SP6;
+				DEVELOPMENT_TEAM = Q2PYCMCHS6;
 				INFOPLIST_FILE = VNGRSTwitterClientUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sirman.VNGRSTwitterClientUITests;
@@ -965,7 +997,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 88RJWK6SP6;
+				DEVELOPMENT_TEAM = Q2PYCMCHS6;
 				INFOPLIST_FILE = VNGRSTwitterClientUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sirman.VNGRSTwitterClientUITests;

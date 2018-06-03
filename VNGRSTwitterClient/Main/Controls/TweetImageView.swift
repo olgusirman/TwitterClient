@@ -23,14 +23,12 @@ final class TweetImageView: UIImageView {
             let mediaUrl = media.mediaUrl,
             let url = URL(string: mediaUrl) else {
                 imageHeightConstraint.constant = 0
-                self.superview?.layoutIfNeeded()
+                self.layoutIfNeeded()
                 return
         }
         self.entity = entity
-        //        self.image = nil
         self.af_setImage(withURL: url)
-        debugPrint(url)
-        self.superview?.layoutIfNeeded()
+        self.layoutIfNeeded()
     }
     
     override func updateConstraints() {
@@ -48,10 +46,14 @@ final class TweetImageView: UIImageView {
             let width = size.width else {
                 return
         }
-        let aspectRatio: CGFloat = CGFloat(width / heigth)
+        
+        let fWidth = Float(width)
+        let fHeight = Float(heigth)
+        let ratio = fWidth / fHeight
+        let aspectRatio: Float = roundf(ratio * 100) / 100
         
         self.aspectRatioConstraint.isActive = false
-        self.aspectRatioConstraint = self.widthAnchor.constraint( equalTo: self.heightAnchor, multiplier: aspectRatio)
+        self.aspectRatioConstraint = self.widthAnchor.constraint( equalTo: self.heightAnchor, multiplier: CGFloat(aspectRatio))
         self.aspectRatioConstraint.isActive = true
     }
 }
