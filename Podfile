@@ -9,8 +9,6 @@ target 'VNGRSTwitterClient' do
   
   # Service
   pod 'Alamofire'
-  pod 'AlamofireNetworkActivityIndicator', '~> 2.2'
-  pod 'AlamofireImage', '~> 3.3'
   
   # Utilities
   pod 'ObjectMapper'
@@ -18,7 +16,10 @@ target 'VNGRSTwitterClient' do
   pod 'RxCocoa'
   
   # UI
-
+  pod 'Kingfisher', '~> 4.0'
+  pod 'AlamofireNetworkActivityIndicator', '~> 2.2'
+  pod 'AlamofireImage', '~> 3.3'
+  
   target 'VNGRSTwitterClientTests' do
     inherit! :search_paths
     # Pods for testing

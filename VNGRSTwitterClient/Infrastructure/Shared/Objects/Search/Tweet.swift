@@ -9,8 +9,9 @@
 import Foundation
 import ObjectMapper
 
-class Tweet: Mappable {
+final class Tweet: Mappable {
     
+    var created: String?
     var id: Int?
     var id_str: String?
     var text: String?
@@ -23,12 +24,28 @@ class Tweet: Mappable {
     
     // Mappable
     func mapping(map: Map) {
+        self.created <- map["created_at"]
         self.id  <- map["id"]
         self.id_str <- map["id_str"]
         self.text <- map["text"]
         self.entities <- map["entities"]
         self.user <- map["user"]
     }
+}
+
+extension Tweet {
+    
+    var hasImage: Bool {
+        
+        guard let entity = entities,
+            let media = entity.media?.first,
+            let mediaUrl = media.mediaUrl,
+            URL(string: mediaUrl) != nil else {
+                return false
+        }
+        return true
+    }
+    
 }
 
 /*

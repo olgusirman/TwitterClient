@@ -12,7 +12,7 @@ import ObjectMapper
 struct Size: Mappable {
     
     var height: Int?
-    var resize: String? //fit, crop
+    var resize: SizeType?
     var width: Int?
     
     init?(map: Map) {
@@ -21,8 +21,34 @@ struct Size: Mappable {
     
     // Mappable
     mutating func mapping(map: Map) {
-        self.height  <- map["height"]
+        self.height  <- map["h"]
         self.resize <- map["resize"]
-        self.width <- map["width"]
+        self.width <- map["w"]
     }
 }
+
+/*
+ "sizes": {
+ "thumb": {
+ "h": 150,
+ "resize": "crop",
+ "w": 150
+ },
+ "large": {
+ "h": 238,
+ "resize": "fit",
+ "w": 226
+ },
+ "medium": {
+ "h": 238,
+ "resize": "fit",
+ "w": 226
+ },
+ "small": {
+ "h": 238,
+ "resize": "fit",
+ "w": 226
+ }
+ },
+
+ */

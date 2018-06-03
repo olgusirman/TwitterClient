@@ -12,8 +12,8 @@ import ObjectMapper
 struct Media: Mappable {
     
     var type: String? //photo
-    var sizes: Size?
-    var media_url: String?
+    var sizes: Sizes?
+    var mediaUrl: String?
     
     init?(map: Map) {
         
@@ -23,6 +23,6 @@ struct Media: Mappable {
     mutating func mapping(map: Map) {
         self.type  <- map["type"]
         self.sizes <- map["sizes"]
-        self.media_url <- map["media_url"]
+        self.mediaUrl <- map["media_url_https"]
     }
 }

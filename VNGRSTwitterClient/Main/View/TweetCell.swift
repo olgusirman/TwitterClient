@@ -14,15 +14,12 @@ final class TweetCell: UITableViewCell {
     // MARK: Properties
     @IBOutlet fileprivate weak var userImageView: UserProfileImageView!
     @IBOutlet fileprivate weak var tweetTextLabel: UILabel!
+    @IBOutlet weak var entityImageView: TweetImageView!
     
     // MARK: Lifecycle
     override func draw(_ rect: CGRect) {
         super.draw(rect)
         userImageView.roundCorners()
-    }
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
     }
     
     override func prepareForReuse() {
@@ -34,15 +31,8 @@ final class TweetCell: UITableViewCell {
     func configure(tweet: Tweet) {
         tweetTextLabel.text = tweet.text
         tweet.user?.setImage(to: userImageView)
+        if tweet.entities?.media?.first?.mediaUrl != nil {
+            entityImageView.setImage(to: tweet)
+        }
     }
-    
-}
-
-// MARK: Helpers
-extension TweetCell {
-    
-    fileprivate func configureUI() {
-        userImageView.roundCorners()
-    }
-    
 }

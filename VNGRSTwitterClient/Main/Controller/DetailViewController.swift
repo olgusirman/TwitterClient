@@ -10,10 +10,12 @@ import UIKit
 
 final class DetailViewController: UIViewController {
 
-    // MARK - Properties
-    @IBOutlet weak var detailDescriptionLabel: UILabel!
+    // MARK: - Outlets
+    @IBOutlet fileprivate weak var detailDescriptionLabel: UILabel!
+    @IBOutlet fileprivate weak var detailImageView: TweetImageView!
     
-    var detailItem: Tweet? {
+    // MARK: - Properties
+    var detailTweet: Tweet? {
         didSet {
             // Update the view.
             configureView()
@@ -26,14 +28,24 @@ final class DetailViewController: UIViewController {
         configureView()
     }
 
-    // MARK - UpdateUI
+    // MARK: - UpdateUI
     func configureView() {
         // Update the user interface for the detail item.
-        if let detail = detailItem {
-            if let label = detailDescriptionLabel {
-                label.text = detail.text
-            }
+        guard let tweet = detailTweet,
+            let label = detailDescriptionLabel,
+            let detailImageView = detailImageView else {
+            return
         }
+        
+        // Tweet userName
+        if let userName = tweet.user?.name {
+            self.navigationItem.title = userName
+        }
+        
+        // Set outlets
+        detailImageView.setImage(to: tweet)
+        detailImageView.imageHeightConstraint.constant = self.view.bounds.size.height / 2
+        label.text = tweet.text
     }
 }
 

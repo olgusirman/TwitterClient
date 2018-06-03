@@ -20,7 +20,7 @@ protocol RestEndpoint: URLRequestConvertible {
 enum Router: RestEndpoint {
     
     case authentication()
-    case search(searchRouterObject: SearchRouterObject?)
+    case search(searchRouterObject: SearchRouterObject)
     
     var method : HTTPMethod {
         switch self {
@@ -54,10 +54,15 @@ enum Router: RestEndpoint {
             case .search(let searchRouterObject):
                 
                 var param : Parameters = [:]
-                if let query = searchRouterObject?.query {
-                    param["q"] = query
+                let query = searchRouterObject.query
+                // Required
+                param["q"] = query
+                
+                // Optional
+                if let sinceId = searchRouterObject.maxId {
+                    param["max_id"] = sinceId
                 }
-                //param["count"] = 20
+                
                 return param
             }
         }()
