@@ -215,12 +215,9 @@
 		1A31B77D20AE25EB004A7E06 /* VNGRSTwitterClient */ = {
 			isa = PBXGroup;
 			children = (
-				1A58801B20BC99140050315C /* Main */,
+				1A36788920C5DD7C0058B668 /* Screens */,
+				1A36788820C5DD280058B668 /* Resources */,
 				1AAC9EC820B3659400DA4723 /* Infrastructure */,
-				1AAC9EBD20B34ED300DA4723 /* Login */,
-				1A31B78720AE25EC004A7E06 /* Assets.xcassets */,
-				1A31B78920AE25EC004A7E06 /* LaunchScreen.storyboard */,
-				1A31B78C20AE25EC004A7E06 /* Info.plist */,
 			);
 			path = VNGRSTwitterClient;
 			sourceTree = "<group>";
@@ -243,6 +240,25 @@
 				1A31B7A220AE25EC004A7E06 /* Info.plist */,
 			);
 			path = VNGRSTwitterClientUITests;
+			sourceTree = "<group>";
+		};
+		1A36788820C5DD280058B668 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1A31B78720AE25EC004A7E06 /* Assets.xcassets */,
+				1A31B78920AE25EC004A7E06 /* LaunchScreen.storyboard */,
+				1A31B78C20AE25EC004A7E06 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		1A36788920C5DD7C0058B668 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				1AAC9EBD20B34ED300DA4723 /* Login */,
+				1A58801B20BC99140050315C /* Main */,
+			);
+			path = Screens;
 			sourceTree = "<group>";
 		};
 		1A58801B20BC99140050315C /* Main */ = {

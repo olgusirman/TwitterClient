@@ -19,7 +19,6 @@ final class MasterViewController: UIViewController {
     // MARK: - Properties
     fileprivate var tweets = [Tweet]() {
         didSet {
-            debugPrint("tweets didSet triggered")
             // update the sinceId
             self.updateTheLastId()
         }
