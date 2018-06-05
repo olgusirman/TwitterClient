@@ -213,7 +213,9 @@ extension MasterViewController: UITableViewDataSource, UITableViewDelegate {
         }
         
         let tweet = tweets[indexPath.row]
+        tweet.indexPath = indexPath
         cell.configure(tweet: tweet)
+        cell.delegate = self
         return cell
         
     }
@@ -228,6 +230,15 @@ extension MasterViewController: UITableViewDataSource, UITableViewDelegate {
             appendMoreTweets()
             debugPrint("fetch more tweets")
         }
+    }
+    
+}
+
+extension MasterViewController: TweetCellDelegate {
+    
+    func imageLoaded(with image: UIImage?, with indexPath: IndexPath?) {
+        guard let indexPath = indexPath else { return }
+        self.tableView.reloadRows(at: [indexPath], with: .fade)
     }
     
 }

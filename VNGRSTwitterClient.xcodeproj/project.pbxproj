@@ -46,6 +46,7 @@
 		7DA2B10B20C49E2E008657F4 /* VNGRSLoginTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA2B10A20C49E2E008657F4 /* VNGRSLoginTests.swift */; };
 		7DA2B10F20C4A71C008657F4 /* VNGRSMainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA2B10E20C4A71C008657F4 /* VNGRSMainTests.swift */; };
 		7DA2B11220C4A762008657F4 /* VNGRSRootTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA2B11120C4A762008657F4 /* VNGRSRootTests.swift */; };
+		7DA2B11720C7321D008657F4 /* TweetCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA2B11620C7321D008657F4 /* TweetCellDelegate.swift */; };
 		B17C3576CED1522A8D6FA130 /* Pods_VNGRSTwitterClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6755D19E9ED0B7B2FA51E320 /* Pods_VNGRSTwitterClient.framework */; };
 		B4587B0F3C80D55713879F65 /* Pods_VNGRSTwitterClientUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7F03AE51300769B34826706 /* Pods_VNGRSTwitterClientUITests.framework */; };
 /* End PBXBuildFile section */
@@ -118,6 +119,7 @@
 		7DA2B10A20C49E2E008657F4 /* VNGRSLoginTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VNGRSLoginTests.swift; sourceTree = "<group>"; };
 		7DA2B10E20C4A71C008657F4 /* VNGRSMainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VNGRSMainTests.swift; sourceTree = "<group>"; };
 		7DA2B11120C4A762008657F4 /* VNGRSRootTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VNGRSRootTests.swift; sourceTree = "<group>"; };
+		7DA2B11620C7321D008657F4 /* TweetCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetCellDelegate.swift; sourceTree = "<group>"; };
 		916E1E79D4AC046172EF3706 /* Pods-VNGRSTwitterClientTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VNGRSTwitterClientTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VNGRSTwitterClientTests/Pods-VNGRSTwitterClientTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A169C5C159CC922AB3C7C381 /* Pods-VNGRSTwitterClientTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VNGRSTwitterClientTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-VNGRSTwitterClientTests/Pods-VNGRSTwitterClientTests.release.xcconfig"; sourceTree = "<group>"; };
 		C7F03AE51300769B34826706 /* Pods_VNGRSTwitterClientUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VNGRSTwitterClientUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -264,6 +266,7 @@
 		1A58801B20BC99140050315C /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				7DA2B11320C731FF008657F4 /* Protocols */,
 				7DA2B0D520C2A2FA008657F4 /* Controls */,
 				1A2046BC20BF5FF200ECDB87 /* View */,
 				1A2046BB20BF5FED00ECDB87 /* Controller */,
@@ -406,6 +409,14 @@
 				7DA2B11120C4A762008657F4 /* VNGRSRootTests.swift */,
 			);
 			path = Root;
+			sourceTree = "<group>";
+		};
+		7DA2B11320C731FF008657F4 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				7DA2B11620C7321D008657F4 /* TweetCellDelegate.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		B26799062D6180F0379D5E6D /* Frameworks */ = {
@@ -749,6 +760,7 @@
 				1A31B77F20AE25EC004A7E06 /* AppDelegate.swift in Sources */,
 				1AC73EE420BDE178007D07B0 /* AuthObject.swift in Sources */,
 				7DA2B10120C4258F008657F4 /* TweetImageView.swift in Sources */,
+				7DA2B11720C7321D008657F4 /* TweetCellDelegate.swift in Sources */,
 				1A2046BE20BF601400ECDB87 /* TweetCell.swift in Sources */,
 				7DA2B10320C42ABF008657F4 /* SizeType.swift in Sources */,
 				1AAC9ECE20B365D100DA4723 /* APIManager.swift in Sources */,

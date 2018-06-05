@@ -17,6 +17,7 @@ final class Tweet: Mappable {
     var text: String?
     var entities: Entity?
     var user: User?
+    var indexPath: IndexPath?
     
     required init?(map: Map) {
         

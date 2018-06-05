@@ -17,7 +17,7 @@ final class TweetImageView: UIImageView {
     
     fileprivate var entity: Entity?
     
-    func setImage(to tweet: Tweet) {
+    func setImage(to tweet: Tweet, completionHandler: (() -> Void)? = nil ) {
         guard let entity = tweet.entities,
             let media = entity.media?.first,
             let mediaUrl = media.mediaUrl,
@@ -27,7 +27,10 @@ final class TweetImageView: UIImageView {
                 return
         }
         self.entity = entity
-        self.af_setImage(withURL: url)
+        //self.af_setImage(withURL: url)
+        self.af_setImage(withURL: url) { (dataResponse) in
+            completionHandler?()
+        }
         //self.layoutIfNeeded()
     }
     

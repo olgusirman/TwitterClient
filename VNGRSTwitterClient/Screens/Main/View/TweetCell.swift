@@ -16,6 +16,8 @@ final class TweetCell: UITableViewCell {
     @IBOutlet fileprivate weak var tweetTextLabel: UILabel!
     @IBOutlet weak var entityImageView: TweetImageView!
     
+    weak var delegate: TweetCellDelegate?
+    
     // MARK: Lifecycle
     override func draw(_ rect: CGRect) {
         super.draw(rect)
@@ -31,9 +33,14 @@ final class TweetCell: UITableViewCell {
     func configure(tweet: Tweet) {
         tweetTextLabel.text = tweet.text
         tweet.user?.setImage(to: userImageView)
+        
         if tweet.entities?.media?.first?.mediaUrl != nil {
-            entityImageView.setImage(to: tweet)
-            self.layoutIfNeeded()
+            //entityImageView.setImage(to: tweet)
+            self.entityImageView.setImage(to: tweet, completionHandler: { [weak self] in
+                //self?.setNeedsUpdateConstraints()
+                self?.delegate?.imageLoaded(with: nil, with: tweet.indexPath)
+            })
+            //self.layoutIfNeeded()
         }
     }
 }
