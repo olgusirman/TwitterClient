@@ -21,7 +21,6 @@ struct Entity: Mappable {
     mutating func mapping(map: Map) {
         self.media  <- map["media"]
     }
-    
 }
 
 

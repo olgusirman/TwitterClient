@@ -69,13 +69,8 @@ final class MasterViewController: UIViewController {
         
         // Create a searchObject and fetch tweets
         let searchObject = SearchRouterObject(query: searchText)
-        
-        //VNGRS geocode
-        //Decimal Values
-        //Latitude =    41.020121
-        //Longitude =    28.888878
+
         isLoading = true
-        
         APIManager.shared.search(searchRouterObject: searchObject!, successHandler: { (tweets) in
             self.updateUI(tweets: tweets)
             completionHandler(true, tweets)
@@ -133,7 +128,6 @@ extension MasterViewController {
         if let tweets = tweets {
             // Use tweets for initial array
             self.tweets = tweets
-           
         }
         
         self.isLoading = false
@@ -225,20 +219,22 @@ extension MasterViewController: UITableViewDataSource, UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let tweet = tweets[indexPath.row]
+        return tweet.configureCellHeight()
+    }
+    
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if scrollView.contentSize.height - (scrollView.contentOffset.y + scrollView.bounds.size.height) <= 100 && !self.isLoading {
             appendMoreTweets()
-            debugPrint("fetch more tweets")
         }
     }
-    
 }
 
 extension MasterViewController: TweetCellDelegate {
     
     func imageLoaded(with image: UIImage?, with indexPath: IndexPath?) {
-        guard let indexPath = indexPath else { return }
-        self.tableView.reloadRows(at: [indexPath], with: .fade)
+        debugPrint("\(String(describing: image)) loaded")
     }
     
 }
@@ -250,5 +246,4 @@ extension MasterViewController: UISearchBarDelegate {
         fetchTweets(searchText: searchText) { isSuccess, tweets in }
         self.view.endEditing(true)
     }
-    
 }

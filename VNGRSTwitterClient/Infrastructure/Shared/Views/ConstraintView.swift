@@ -14,5 +14,4 @@ final class ConstraintView: UIView {
         super.awakeFromNib()
         self.backgroundColor = .clear
     }
-
 }

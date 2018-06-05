@@ -47,6 +47,7 @@
 		7DA2B10F20C4A71C008657F4 /* VNGRSMainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA2B10E20C4A71C008657F4 /* VNGRSMainTests.swift */; };
 		7DA2B11220C4A762008657F4 /* VNGRSRootTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA2B11120C4A762008657F4 /* VNGRSRootTests.swift */; };
 		7DA2B11720C7321D008657F4 /* TweetCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA2B11620C7321D008657F4 /* TweetCellDelegate.swift */; };
+		7DA2B11920C7523B008657F4 /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA2B11820C7523B008657F4 /* UIFontExtension.swift */; };
 		B17C3576CED1522A8D6FA130 /* Pods_VNGRSTwitterClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6755D19E9ED0B7B2FA51E320 /* Pods_VNGRSTwitterClient.framework */; };
 		B4587B0F3C80D55713879F65 /* Pods_VNGRSTwitterClientUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7F03AE51300769B34826706 /* Pods_VNGRSTwitterClientUITests.framework */; };
 /* End PBXBuildFile section */
@@ -120,6 +121,7 @@
 		7DA2B10E20C4A71C008657F4 /* VNGRSMainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VNGRSMainTests.swift; sourceTree = "<group>"; };
 		7DA2B11120C4A762008657F4 /* VNGRSRootTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VNGRSRootTests.swift; sourceTree = "<group>"; };
 		7DA2B11620C7321D008657F4 /* TweetCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetCellDelegate.swift; sourceTree = "<group>"; };
+		7DA2B11820C7523B008657F4 /* UIFontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontExtension.swift; sourceTree = "<group>"; };
 		916E1E79D4AC046172EF3706 /* Pods-VNGRSTwitterClientTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VNGRSTwitterClientTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VNGRSTwitterClientTests/Pods-VNGRSTwitterClientTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A169C5C159CC922AB3C7C381 /* Pods-VNGRSTwitterClientTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VNGRSTwitterClientTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-VNGRSTwitterClientTests/Pods-VNGRSTwitterClientTests.release.xcconfig"; sourceTree = "<group>"; };
 		C7F03AE51300769B34826706 /* Pods_VNGRSTwitterClientUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VNGRSTwitterClientUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -361,6 +363,7 @@
 				1AC73EE820BDE485007D07B0 /* DataRequestExtension.swift */,
 				7DA2B0DA20C2BE37008657F4 /* StringExtensions.swift */,
 				7DA2B0DC20C2C09B008657F4 /* ArrayExtension.swift */,
+				7DA2B11820C7523B008657F4 /* UIFontExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -742,6 +745,7 @@
 			files = (
 				1AAC9ECF20B365D100DA4723 /* Router.swift in Sources */,
 				1A2046B820BF56D400ECDB87 /* BaseObject.swift in Sources */,
+				7DA2B11920C7523B008657F4 /* UIFontExtension.swift in Sources */,
 				1AAC9ECD20B365D100DA4723 /* ErrorManager.swift in Sources */,
 				1AAC9EC620B3631300DA4723 /* ConstraintView.swift in Sources */,
 				1AC73EE920BDE485007D07B0 /* DataRequestExtension.swift in Sources */,

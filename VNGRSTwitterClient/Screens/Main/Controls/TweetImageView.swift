@@ -23,30 +23,28 @@ final class TweetImageView: UIImageView {
             let mediaUrl = media.mediaUrl,
             let url = URL(string: mediaUrl) else {
                 imageHeightConstraint.constant = 0
-                //self.layoutIfNeeded()
                 return
         }
         self.entity = entity
-        //self.af_setImage(withURL: url)
         self.af_setImage(withURL: url) { (dataResponse) in
             completionHandler?()
         }
-        //self.layoutIfNeeded()
     }
     
     override func updateConstraints() {
-        super.updateConstraints()
         
         guard let entity = entity,
             let media = entity.media?.first,
             let mediaUrl = media.mediaUrl,
             let size = media.sizes?.medium,
-            URL(string: mediaUrl) != nil && self.image != nil else {
+            URL(string: mediaUrl) != nil else {
+                super.updateConstraints()
                 return
         }
         
         guard let heigth = size.height,
             let width = size.width else {
+                super.updateConstraints()
                 return
         }
         
@@ -58,5 +56,6 @@ final class TweetImageView: UIImageView {
         self.aspectRatioConstraint.isActive = false
         self.aspectRatioConstraint = self.widthAnchor.constraint( equalTo: self.heightAnchor, multiplier: CGFloat(aspectRatio))
         self.aspectRatioConstraint.isActive = true
+        super.updateConstraints()
     }
 }

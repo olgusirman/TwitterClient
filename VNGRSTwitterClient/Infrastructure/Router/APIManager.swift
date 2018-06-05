@@ -19,7 +19,7 @@ final public class APIManager {
     // MARK: - Properties
     static let shared = APIManager() // Use dependency injection later instead
     
-    lazy var manager: Alamofire.SessionManager = {
+    fileprivate lazy var manager: Alamofire.SessionManager = {
         let manager = SessionManager.default
         if let authToken = UserDefaults.standard.string(forKey: APIConstants.accessToken) { // Use keychain for that "access_token"
             manager.adapter = AccessTokenAdapter(accessToken: authToken)

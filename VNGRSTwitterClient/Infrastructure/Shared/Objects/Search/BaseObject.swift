@@ -21,5 +21,4 @@ struct BaseObject: Mappable {
     mutating func mapping(map: Map) {
         self.statuses  <- map["statuses"]
     }
-    
 }
