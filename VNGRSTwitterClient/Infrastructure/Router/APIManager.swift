@@ -21,7 +21,7 @@ final public class APIManager {
     
     lazy var manager: Alamofire.SessionManager = {
         let manager = SessionManager.default
-        if let authToken = UserDefaults.standard.string(forKey: "access_token") { // Use keychain for that "access_token"
+        if let authToken = UserDefaults.standard.string(forKey: APIConstants.accessToken) { // Use keychain for that "access_token"
             manager.adapter = AccessTokenAdapter(accessToken: authToken)
         }
         return manager
@@ -36,7 +36,7 @@ final public class APIManager {
                 // Serialize
                 if let accessToken = response.value?.accessToken {
                     debugPrint("Successfully Authhenticate 👍")
-                    UserDefaults.standard.set(accessToken, forKey: "access_token")
+                    UserDefaults.standard.set(accessToken, forKey: APIConstants.accessToken)
                     successHandler(accessToken)
                 } else {
                     //not Mapped

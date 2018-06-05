@@ -17,7 +17,6 @@ final class DetailViewController: UIViewController {
     // MARK: - Properties
     var detailTweet: Tweet? {
         didSet {
-            // Update the view.
             configureView()
         }
     }
@@ -29,7 +28,7 @@ final class DetailViewController: UIViewController {
     }
 
     // MARK: - UpdateUI
-    func configureView() {
+    fileprivate func configureView() {
         // Update the user interface for the detail item.
         guard let tweet = detailTweet,
             let label = detailDescriptionLabel,
@@ -37,15 +36,9 @@ final class DetailViewController: UIViewController {
             return
         }
         
-        // Tweet userName
-        if let userName = tweet.user?.name {
-//            self.navigationItem.title = userName
-            self.navigationController?.navigationItem.title = userName
-        }
-        
         // Set outlets
-        detailImageView.setImage(to: tweet)
         detailImageView.imageHeightConstraint.constant = self.view.bounds.size.height / 2
+        detailImageView.setImage(to: tweet)
         label.text = tweet.text
     }
     

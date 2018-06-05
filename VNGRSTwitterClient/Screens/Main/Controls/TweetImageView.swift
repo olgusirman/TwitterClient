@@ -23,12 +23,12 @@ final class TweetImageView: UIImageView {
             let mediaUrl = media.mediaUrl,
             let url = URL(string: mediaUrl) else {
                 imageHeightConstraint.constant = 0
-                self.layoutIfNeeded()
+                //self.layoutIfNeeded()
                 return
         }
         self.entity = entity
         self.af_setImage(withURL: url)
-        self.layoutIfNeeded()
+        //self.layoutIfNeeded()
     }
     
     override func updateConstraints() {

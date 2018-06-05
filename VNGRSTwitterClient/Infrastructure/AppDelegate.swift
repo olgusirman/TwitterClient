@@ -17,10 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     
     // MARK: Delegates
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-
         configureNetworkActivityIndicatorManager()
         checkTokenAndNavigateToMainIfNeeded()
-        
         return true
     }
     
@@ -31,7 +29,7 @@ extension AppDelegate {
     
     fileprivate func checkTokenAndNavigateToMainIfNeeded() {
         //Check token exist and valid, prepare for fetch tweets
-        if (UserDefaults.standard.object(forKey: "access_token") != nil) {
+        if (UserDefaults.standard.object(forKey: APIConstants.accessToken) != nil) {
             let rootController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
             window?.rootViewController = rootController;
             window?.makeKey()

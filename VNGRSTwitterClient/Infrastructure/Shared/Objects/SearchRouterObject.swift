@@ -19,5 +19,4 @@ struct SearchRouterObject {
     init?(query: String) {
         self.query = query
     }
-    
 }

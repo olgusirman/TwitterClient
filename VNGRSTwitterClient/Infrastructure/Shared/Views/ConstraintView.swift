@@ -8,9 +8,6 @@
 
 import UIKit
 
-//protocol ConstraintableView {}
-//protocol ConstraintableView : where SELF is UIView {}
-
 final class ConstraintView: UIView {
 
     override func awakeFromNib() {

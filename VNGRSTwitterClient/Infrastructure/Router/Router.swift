@@ -34,9 +34,9 @@ enum Router: RestEndpoint {
     var path : String {
         switch self {
         case .authentication:
-            return "/oauth2/token" //https://api.twitter.com/oauth2/token
+            return "/oauth2/token"
         case .search(_):
-            return "/1.1/search/tweets.json" //1.1 calisti ama emin degilim 2.0 i da deneyebilirsin yada silerek deneyebilirsin //https://api.twitter.com/1.1/search/tweets.json
+            return "/1.1/search/tweets.json"
         }
     }
     
@@ -76,32 +76,17 @@ enum Router: RestEndpoint {
         switch self {
         case .authentication:
             
-            let key = "rIUalTyVYpBoMcfuUTOiF1r7H"
-            let secret = "keCJoAi3yOz3CtlUjesUYTPnz05iDZyUJGE4rCQOtdjJDjYGZ9"
-            
+            let key = APIConstants.key
+            let secret = APIConstants.secret
             let auth = "Basic " + (key + ":" + secret).base64()
-            
-            request.setValue( "\(auth)", forHTTPHeaderField: "Authorization")
-            request.setValue("application/x-www-form-urlencoded;charset=UTF-8", forHTTPHeaderField: "Content-Type")
+            request.setValue( "\(auth)", forHTTPHeaderField: APIConstants.authorization)
+            request.setValue("application/x-www-form-urlencoded;charset=UTF-8", forHTTPHeaderField: APIConstants.contentType)
             
             return try encoding.encode(request, with: parameters)
-            
         case .search(_):
-            
-            //let defaults = UserDefaults.standard
-            //let accessToken = defaults.object(forKey: "access_token") as! String //TODO: get access_token from keychain
-            
-            //request.setValue( "Bearer \(accessToken)", forHTTPHeaderField: "Authorization")
-            //request.setValue("application/x-www-form-urlencoded;charset=UTF-8", forHTTPHeaderField: "Content-Type")
-            
             return try encoding.encode(request, with: parameters)
         }
     }
 }
 
-extension String {
-    
-    func base64() -> String {
-        return Data(self.utf8).base64EncodedString()
-    }
-}
+

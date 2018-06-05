@@ -16,4 +16,7 @@ extension String {
         return lowercasedSelf.localizedCaseInsensitiveContains(lowercasedTerm)
     }
     
+    func base64() -> String {
+        return Data(self.utf8).base64EncodedString()
+    }
 }

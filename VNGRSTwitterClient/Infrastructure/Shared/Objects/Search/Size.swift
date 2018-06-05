@@ -26,29 +26,3 @@ struct Size: Mappable {
         self.width <- map["w"]
     }
 }
-
-/*
- "sizes": {
- "thumb": {
- "h": 150,
- "resize": "crop",
- "w": 150
- },
- "large": {
- "h": 238,
- "resize": "fit",
- "w": 226
- },
- "medium": {
- "h": 238,
- "resize": "fit",
- "w": 226
- },
- "small": {
- "h": 238,
- "resize": "fit",
- "w": 226
- }
- },
-
- */

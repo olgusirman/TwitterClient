@@ -33,6 +33,7 @@ final class TweetCell: UITableViewCell {
         tweet.user?.setImage(to: userImageView)
         if tweet.entities?.media?.first?.mediaUrl != nil {
             entityImageView.setImage(to: tweet)
+            self.layoutIfNeeded()
         }
     }
 }
