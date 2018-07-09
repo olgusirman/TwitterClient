@@ -1,0 +1,6 @@
+framework module Pods_VNGRSTwitterClient {
+  umbrella header "Pods-VNGRSTwitterClient-umbrella.h"
+
+  export *
+  module * { export * }
+}
