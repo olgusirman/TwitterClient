@@ -50,6 +50,7 @@
 		7DA2B11920C7523B008657F4 /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA2B11820C7523B008657F4 /* UIFontExtension.swift */; };
 		B17C3576CED1522A8D6FA130 /* Pods_VNGRSTwitterClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6755D19E9ED0B7B2FA51E320 /* Pods_VNGRSTwitterClient.framework */; };
 		B4587B0F3C80D55713879F65 /* Pods_VNGRSTwitterClientUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7F03AE51300769B34826706 /* Pods_VNGRSTwitterClientUITests.framework */; };
+		C95E4A3020F3B70A00EC0579 /* TweetFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95E4A2F20F3B70A00EC0579 /* TweetFetcher.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -125,6 +126,7 @@
 		916E1E79D4AC046172EF3706 /* Pods-VNGRSTwitterClientTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VNGRSTwitterClientTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VNGRSTwitterClientTests/Pods-VNGRSTwitterClientTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A169C5C159CC922AB3C7C381 /* Pods-VNGRSTwitterClientTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VNGRSTwitterClientTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-VNGRSTwitterClientTests/Pods-VNGRSTwitterClientTests.release.xcconfig"; sourceTree = "<group>"; };
 		C7F03AE51300769B34826706 /* Pods_VNGRSTwitterClientUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VNGRSTwitterClientUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C95E4A2F20F3B70A00EC0579 /* TweetFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetFetcher.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -268,6 +270,7 @@
 		1A58801B20BC99140050315C /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				C95E4A2E20F3B6D900EC0579 /* Service */,
 				7DA2B11320C731FF008657F4 /* Protocols */,
 				7DA2B0D520C2A2FA008657F4 /* Controls */,
 				1A2046BC20BF5FF200ECDB87 /* View */,
@@ -430,6 +433,14 @@
 				C7F03AE51300769B34826706 /* Pods_VNGRSTwitterClientUITests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C95E4A2E20F3B6D900EC0579 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				C95E4A2F20F3B70A00EC0579 /* TweetFetcher.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -687,6 +698,7 @@
 				7DA2B0FF20C40673008657F4 /* SearchResultType.swift in Sources */,
 				1AC73EEB20BDE4E4007D07B0 /* BackendError.swift in Sources */,
 				7DA2B0DB20C2BE37008657F4 /* StringExtensions.swift in Sources */,
+				C95E4A3020F3B70A00EC0579 /* TweetFetcher.swift in Sources */,
 				1AAC9EDA20B495AA00DA4723 /* AccessTokenAdapter.swift in Sources */,
 				1AAC9ED420B3698700DA4723 /* SearchRouterObject.swift in Sources */,
 				7DA2B0DD20C2C09B008657F4 /* ArrayExtension.swift in Sources */,
@@ -861,6 +873,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "$(SRCROOT)/VNGRSTwitterClient/Resources/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sirman.VNGRSTwitterClient;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -877,6 +890,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "$(SRCROOT)/VNGRSTwitterClient/Resources/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sirman.VNGRSTwitterClient;
 				PRODUCT_NAME = "$(TARGET_NAME)";

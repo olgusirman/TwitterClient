@@ -10,16 +10,27 @@ import Foundation
 import Alamofire
 import ObjectMapper
 
-final public class APIManager {
+protocol Networking {
+    //typealias CompletionHandler = (Data?, Swift.Error?) -> Void
+    //typealias CompletionHandler = (DataResponse<Any>) -> Void
     
-    // Handler typealiases
     typealias success = ( ( _ responseObject : Any) -> Void )
     typealias failure = ( ( _ error : Error? ) -> Void )
+    //func request( from:RestEndpoint, completion: @escaping CompletionHandler) -> DataRequest
+    func request(urlRequest: URLRequestConvertible) -> DataRequest
+}
+
+//protocol Resolver {
+//    associatedtype T: Decodable
+//    func resolve<T: Decodable>()
+//}
+
+final public class HTTPNetworking: Networking {
     
     // MARK: - Properties
-    static let shared = APIManager() // Use dependency injection later instead
     
-    fileprivate lazy var manager: Alamofire.SessionManager = {
+    // MARK: Private Properties
+    fileprivate var manager: Alamofire.SessionManager = {
         let manager = SessionManager.default
         if let authToken = UserDefaults.standard.string(forKey: APIConstants.accessToken) { // Use keychain for that "access_token"
             manager.adapter = AccessTokenAdapter(accessToken: authToken)
@@ -27,7 +38,12 @@ final public class APIManager {
         return manager
     }()
     
+    func request(urlRequest: URLRequestConvertible) -> DataRequest {
+        return manager.request(urlRequest)
+    }
+    
     // MARK: - Functions
+    /*
     func authentication(successHandler : @escaping success , failure : @escaping failure) {
         
         Alamofire.request(Router.authentication()).validate().responseCodable { (response: DataResponse<AuthObject>) in
@@ -47,7 +63,7 @@ final public class APIManager {
             }
         }
     }
-    
+ 
     func search( searchRouterObject: SearchRouterObject, successHandler : @escaping ( (_ tweets : [Tweet]?) -> Void ) , failure : @escaping failure) {
         
         manager.request(Router.search(searchRouterObject: searchRouterObject)).responseJSON { (dataResponse) in
@@ -64,7 +80,34 @@ final public class APIManager {
             }
         }
     }
+ */
+    
 }
 
-
-
+// Helper
+extension Networking {
+    
+    //private func createDataRequest(urlRequest: URLRequestConvertible) -> DataRequest {
+    //    return manager.request(urlRequest)
+    //}
+    
+    private func resolve<T: BaseMappable>( resolvedObject: T.Type,
+                                           dataResponse: DataResponse<Any>) -> T? {
+        
+        // Resolve mapped object
+        if let resolved = Mapper<T>().map(JSONObject: dataResponse.result.value) {
+            return resolved
+        } else {
+            debugPrint("\(T.self) item not resolved in \(#function)")
+            return nil
+        }
+    }
+    
+    private func decodeJSON<T: Decodable>(type: T.Type, from: Data?) -> T? {
+        let decoder = JSONDecoder()
+        guard let data = from,
+            let response = try? decoder.decode(type.self, from: data) else { return nil }
+        return response
+    }
+    
+}

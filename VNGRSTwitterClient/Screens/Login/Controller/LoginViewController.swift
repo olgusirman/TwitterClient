@@ -23,13 +23,15 @@ final class LoginViewController: UIViewController {
     }
     
     public func login(completionHandler: @escaping (_ isSuccess: Bool,_ token: String?) -> Void) {
-        APIManager.shared.authentication(successHandler: { (data) in
+        //TODO: change APIManager
+        /*
+        APIManager.authentication(successHandler: { (data) in
             self.loginButton.isEnabled = true
             completionHandler(true, data as? String)
         }) { (error) in
             self.loginButton.isEnabled = true
             completionHandler(false, nil)
-        }
+        }*/
     }
     
     private func presentMain() {

@@ -6,7 +6,6 @@
 //  Copyright © 2018 Olgu SIRMAN. All rights reserved.
 //
 
-import Foundation
 import Alamofire
 
 extension DataRequest {

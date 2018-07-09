@@ -71,13 +71,15 @@ final class MasterViewController: UIViewController {
         let searchObject = SearchRouterObject(query: searchText)
 
         isLoading = true
-        APIManager.shared.search(searchRouterObject: searchObject!, successHandler: { (tweets) in
+        //TODO: change APIManager
+        /*
+        APIManager.search(searchRouterObject: searchObject!, successHandler: { (tweets) in
             self.updateUI(tweets: tweets)
             completionHandler(true, tweets)
         }, failure: { error in
             self.updateUI()
             completionHandler(false, nil)
-        })
+        })*/
     }
     
 }
@@ -146,7 +148,9 @@ extension MasterViewController {
         searchObject?.maxId = self.sinceId
         
         isLoading = true
-        APIManager.shared.search(searchRouterObject: searchObject!, successHandler: { (tweets) in
+        //TODO: change APIManager
+        /*
+        APIManager.search(searchRouterObject: searchObject!, successHandler: { (tweets) in
             //self.updateUI(tweets: tweets)
             if let tweets = tweets {
                 var tweets = tweets
@@ -158,7 +162,7 @@ extension MasterViewController {
             
         }, failure: { error in
             self.updateUI()
-        })
+        })*/
     }
     
     fileprivate func updateTheLastId() {
