@@ -17,6 +17,11 @@ final class MasterViewController: UIViewController {
     @IBOutlet fileprivate weak var searchBar: UISearchBar!
     
     // MARK: - Properties
+    
+    // MARK: Dependency
+    var fetcher: TweetFetcher?
+    
+    // MARK: Private
     fileprivate var tweets = [Tweet]() {
         didSet {
             // update the sinceId
@@ -68,18 +73,24 @@ final class MasterViewController: UIViewController {
         }
         
         // Create a searchObject and fetch tweets
-        let searchObject = SearchRouterObject(query: searchText)
-
+        guard let searchObject = SearchRouterObject(query: searchText) else { debugPrint("searchObject query parameters is nil \(#function)"); return }
+        
         isLoading = true
-        //TODO: change APIManager
-        /*
-        APIManager.search(searchRouterObject: searchObject!, successHandler: { (tweets) in
-            self.updateUI(tweets: tweets)
+        
+        guard let fetcher = fetcher else { fatalError("Missing dependencies") }
+        fetcher.search(searchRouterObject: searchObject) { [weak self] (tweets, dataResponse, error) in
+            
+            guard let tweets = tweets, error == nil else {
+                self?.updateUI()
+                completionHandler(false, nil)
+                //error occured
+                return
+            }
+            
+            self?.updateUI(tweets: tweets)
             completionHandler(true, tweets)
-        }, failure: { error in
-            self.updateUI()
-            completionHandler(false, nil)
-        })*/
+            
+        }
     }
     
 }

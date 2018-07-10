@@ -10,22 +10,17 @@ import Foundation
 import Alamofire
 import ObjectMapper
 
-protocol Networking {
-    //typealias CompletionHandler = (Data?, Swift.Error?) -> Void
-    //typealias CompletionHandler = (DataResponse<Any>) -> Void
-    
-    typealias success = ( ( _ responseObject : Any) -> Void )
-    typealias failure = ( ( _ error : Error? ) -> Void )
-    //func request( from:RestEndpoint, completion: @escaping CompletionHandler) -> DataRequest
-    func request(urlRequest: URLRequestConvertible) -> DataRequest
+protocol AlamoNetworking {
+    func request(use urlRequest: URLRequestConvertible) -> DataRequest
 }
 
-//protocol Resolver {
-//    associatedtype T: Decodable
-//    func resolve<T: Decodable>()
+//protocol Networking {
+    //typealias CompletionHandler = (Data?, Swift.Error?) -> Void
+    //func request(from: Endpoint, completion: @escaping CompletionHandler)
 //}
 
-final public class HTTPNetworking: Networking {
+
+final public class HTTPNetworking: AlamoNetworking {
     
     // MARK: - Properties
     
@@ -38,7 +33,7 @@ final public class HTTPNetworking: Networking {
         return manager
     }()
     
-    func request(urlRequest: URLRequestConvertible) -> DataRequest {
+    func request(use urlRequest: URLRequestConvertible) -> DataRequest {
         return manager.request(urlRequest)
     }
     
@@ -81,33 +76,5 @@ final public class HTTPNetworking: Networking {
         }
     }
  */
-    
-}
-
-// Helper
-extension Networking {
-    
-    //private func createDataRequest(urlRequest: URLRequestConvertible) -> DataRequest {
-    //    return manager.request(urlRequest)
-    //}
-    
-    private func resolve<T: BaseMappable>( resolvedObject: T.Type,
-                                           dataResponse: DataResponse<Any>) -> T? {
-        
-        // Resolve mapped object
-        if let resolved = Mapper<T>().map(JSONObject: dataResponse.result.value) {
-            return resolved
-        } else {
-            debugPrint("\(T.self) item not resolved in \(#function)")
-            return nil
-        }
-    }
-    
-    private func decodeJSON<T: Decodable>(type: T.Type, from: Data?) -> T? {
-        let decoder = JSONDecoder()
-        guard let data = from,
-            let response = try? decoder.decode(type.self, from: data) else { return nil }
-        return response
-    }
     
 }

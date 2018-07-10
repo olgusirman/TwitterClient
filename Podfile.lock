@@ -1,14 +1,19 @@
 PODS:
-  - Alamofire (4.7.2)
+  - Alamofire (4.7.3)
   - AlamofireImage (3.3.1):
     - Alamofire (~> 4.5)
   - AlamofireNetworkActivityIndicator (2.2.1):
     - Alamofire (~> 4.7)
   - Kingfisher (4.8.0)
-  - ObjectMapper (3.1.0)
-  - RxCocoa (4.1.2):
+  - ObjectMapper (3.3.0)
+  - RxCocoa (4.2.0):
     - RxSwift (~> 4.0)
-  - RxSwift (4.1.2)
+  - RxSwift (4.2.0)
+  - Swinject (2.4.1)
+  - SwinjectAutoregistration (2.1.1):
+    - Swinject (~> 2.1)
+  - SwinjectStoryboard (2.0.1):
+    - Swinject (~> 2.4)
 
 DEPENDENCIES:
   - Alamofire
@@ -18,6 +23,9 @@ DEPENDENCIES:
   - ObjectMapper
   - RxCocoa
   - RxSwift
+  - Swinject
+  - SwinjectAutoregistration
+  - SwinjectStoryboard
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -28,16 +36,22 @@ SPEC REPOS:
     - ObjectMapper
     - RxCocoa
     - RxSwift
+    - Swinject
+    - SwinjectAutoregistration
+    - SwinjectStoryboard
 
 SPEC CHECKSUMS:
-  Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
+  Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
   AlamofireImage: 3b35b586853abaf94ca1250f4e94cff3c21a4c0d
   AlamofireNetworkActivityIndicator: aeac50e6ecb78ec71a5f1f29098bcf4ec2962910
   Kingfisher: 976d828df2b24834c6a3f2fc4d82cdbd26552be1
-  ObjectMapper: 20505058f54e5c3ca69e1d6de9897d152a5369a6
-  RxCocoa: d88ba0f1f6abf040011a9eb4b539324fc426843a
-  RxSwift: e49536837d9901277638493ea537394d4b55f570
+  ObjectMapper: b612bf8c8e99c4dc0bb6013a51f7c27966ed5da9
+  RxCocoa: 0b54909c902e1e581212a03e690bbd94032d8baa
+  RxSwift: 99e10317ddfcc7fbe01356aafd118fde4a0be104
+  Swinject: f7f15a9672e99328c1f07f277091087917215700
+  SwinjectAutoregistration: d06b56bd8f912b9fb9c59c15181342558a734b1b
+  SwinjectStoryboard: ad2529218a1504cc888040ee56c13d7cb1cc7998
 
-PODFILE CHECKSUM: bbfaa42df3ea86c700b054f0a837ebb6f38b950c
+PODFILE CHECKSUM: 89ca9dbbd6561a85d039df6b5226ed21289d77bf
 
 COCOAPODS: 1.5.3

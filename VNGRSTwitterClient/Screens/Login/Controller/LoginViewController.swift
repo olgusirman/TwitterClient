@@ -9,29 +9,34 @@
 import UIKit
 
 final class LoginViewController: UIViewController {
-
+    
     @IBOutlet fileprivate weak var loginButton: UIButton!
+    
+    var loginFetcher: LoginFetcher?
     
     // MARK - Actions
     @IBAction func loginPressed(_ sender: UIButton) {
         loginButton.isEnabled = false
-        login { [weak self] isSuccess, _ in
+        login { [weak self] isSuccess, _, _ in
             guard isSuccess else { return }
             // after successfull login present the Main
             self?.presentMain()
         }
     }
     
-    public func login(completionHandler: @escaping (_ isSuccess: Bool,_ token: String?) -> Void) {
-        //TODO: change APIManager
-        /*
-        APIManager.authentication(successHandler: { (data) in
+    public func login(completionHandler: @escaping (_ isSuccess: Bool,_ token: String?, _ error: Error?) -> Void) {
+        
+        guard let fetcher = loginFetcher else { fatalError("Missing dependencies") }
+        fetcher.authentication { (authToken, dataResponse, error) in
+            
+            if let error = error {
+                self.loginButton.isEnabled = true
+                completionHandler(false, nil, error)
+                return
+            }
             self.loginButton.isEnabled = true
-            completionHandler(true, data as? String)
-        }) { (error) in
-            self.loginButton.isEnabled = true
-            completionHandler(false, nil)
-        }*/
+            completionHandler(true, authToken, nil)
+        }
     }
     
     private func presentMain() {

@@ -12,6 +12,9 @@ target 'VNGRSTwitterClient' do
   
   # Utilities
   pod 'ObjectMapper'
+  pod 'Swinject'
+  pod 'SwinjectAutoregistration'
+  pod 'SwinjectStoryboard'
   pod 'RxSwift'
   pod 'RxCocoa'
   
@@ -23,11 +26,16 @@ target 'VNGRSTwitterClient' do
   target 'VNGRSTwitterClientTests' do
     inherit! :search_paths
     # Pods for testing
+    pod 'Swinject'
+    pod 'SwinjectAutoregistration'
+    #pod 'SwinjectStoryboard', '1.1.2'
+    
   end
 
   target 'VNGRSTwitterClientUITests' do
     inherit! :search_paths
     # Pods for testing
+    
   end
 
 end
