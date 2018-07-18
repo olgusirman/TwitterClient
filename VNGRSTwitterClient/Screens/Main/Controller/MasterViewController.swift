@@ -9,6 +9,8 @@
 import UIKit
 import RxCocoa
 import RxSwift
+//import SystemConfiguration
+import Reachability
 
 final class MasterViewController: UIViewController {
     
@@ -33,6 +35,9 @@ final class MasterViewController: UIViewController {
     fileprivate var sinceId = 0
     fileprivate var isLoading = false
     
+//    private let reachability = SCNetworkReachabilityCreateWithName(nil, "www.raywenderlich.com")
+    private let reachability = Reachability()!
+    
     // Private Constants
     fileprivate enum ControllerConstants {
         static let tweetCellIdentifier = "tweetCell"
@@ -48,6 +53,8 @@ final class MasterViewController: UIViewController {
         configureTableView()
         fetchTweets(searchText: ControllerConstants.initialSearchText) { isSuccess, tweets in }
         configureSearch()
+//        checkReachable()
+         setReachabilityNotifier()
     }
     
     // MARK: - Segues
@@ -98,6 +105,66 @@ final class MasterViewController: UIViewController {
 // MARK: Private Helpers
 extension MasterViewController {
     
+    // MARK: Reachability
+    fileprivate func setReachabilityNotifier () {
+        //declare this inside of viewWillAppear
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(reachabilityChanged(note:)), name: .reachabilityChanged, object: reachability)
+        do{
+            try reachability.startNotifier()
+        }catch{
+            print("could not start reachability notifier")
+        }
+    }
+    
+    @objc func reachabilityChanged(note: Notification) {
+        
+        let reachability = note.object as! Reachability
+        
+        switch reachability.connection {
+        case .wifi:
+            print("Reachable via WiFi")
+        case .cellular:
+            print("Reachable via Cellular")
+        case .none:
+            print("Network not reachable")
+        }
+    }
+    
+    // MARK: Reachability SC
+    /*
+    fileprivate func checkReachable() {
+        
+        var flags = SCNetworkReachabilityFlags()
+        SCNetworkReachabilityGetFlags(self.reachability!, &flags)
+        
+        if (isNetworkReachable(with: flags))
+        {
+            print (flags)
+            if flags.contains(.isWWAN) {
+                self.alert(message:"via mobile",title:"Reachable")
+                return
+            }
+            
+            self.alert(message:"via wifi",title:"Reachable")
+        }
+        else if (!isNetworkReachable(with: flags)) {
+            self.alert(message:"Sorry no connection",title: "unreachable")
+            print (flags)
+            return
+        }
+    }
+    
+    private func isNetworkReachable(with flags: SCNetworkReachabilityFlags) -> Bool {
+        let isReachable = flags.contains(.reachable)
+        let needsConnection = flags.contains(.connectionRequired)
+        let canConnectAutomatically = flags.contains(.connectionOnDemand) || flags.contains(.connectionOnTraffic)
+        let canConnectWithoutUserInteraction = canConnectAutomatically && !flags.contains(.interventionRequired)
+        return isReachable && (!needsConnection || canConnectWithoutUserInteraction)
+    }
+    */
+    
+    // MARK: Configure SplitViewController
     fileprivate func configureSplitViewController() {
         
         guard let split = splitViewController else {
@@ -112,6 +179,7 @@ extension MasterViewController {
         
     }
     
+    // MARK: Configure SearchBar
     fileprivate func configureSearch() {
         
         searchBar.delegate = self
@@ -131,11 +199,13 @@ extension MasterViewController {
         
     }
     
+    // MARK: Configure TableView
     fileprivate func configureTableView() {
         tableView.estimatedRowHeight = 100.0
         tableView.rowHeight = UITableViewAutomaticDimension
     }
     
+    // MARK: Update methods
     fileprivate func updateUI( tweets: [Tweet]? = nil ) {
         
         if let tweets = tweets {
