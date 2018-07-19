@@ -41,8 +41,9 @@ extension SwinjectStoryboard {
     //defaultContainer.autoregister(LoginFetcher.self, initializer: LoginTokenFetcher.init)
     ///
     
-    SwinjectStoryboard.defaultContainer.storyboardInitCompleted(LoginViewController.self) { r, c in
-        c.loginFetcher = r.resolve(LoginFetcher.self)
+    SwinjectStoryboard.defaultContainer.storyboardInitCompleted(LoginViewController.self) { resolver, controller in
+        //c.loginFetcher = r.resolve(LoginFetcher.self)
+        controller.loginFetcher = resolver ~> LoginFetcher.self
     }
     //SwinjectStoryboard.defaultContainer.register(LoginTokenFetcher.self) { _ in  }
     SwinjectStoryboard.defaultContainer.autoregister(LoginFetcher.self, initializer: LoginTokenFetcher.init)
@@ -74,7 +75,6 @@ extension SwinjectStoryboard {
     // Master
     SwinjectStoryboard.defaultContainer.autoregister(TweetFetcher.self, initializer: MasterViewControllerTweetFetcher.init)
     SwinjectStoryboard.defaultContainer.storyboardInitCompleted(MasterViewController.self) { resolver, controller in
-        //controller.fetcher = resolver ~> PriceFetcher.self
         controller.fetcher = resolver ~> TweetFetcher.self
     }
     

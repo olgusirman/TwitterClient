@@ -149,6 +149,7 @@ extension MasterViewController {
     
     fileprivate func appendMoreTweets() {
         
+        guard let fetcher = fetcher else { fatalError("Fetcher has not been injected") }
         guard let searchText = searchBar.text, !searchText.isEmpty && !self.isLoading else {
             // Maybe show emptyDataSet there
             return
@@ -159,7 +160,21 @@ extension MasterViewController {
         searchObject?.maxId = self.sinceId
         
         isLoading = true
-        //TODO: change APIManager
+        fetcher.search(searchRouterObject: searchObject!) { [weak self] (tweets, dataResponse, error) in
+            
+            guard let tweets = tweets, error == nil else {
+                //error occured
+                self?.updateUI()
+                return
+            }
+            
+            var clonedTweets = tweets
+            clonedTweets.removeFirst()
+            self?.tweets.append(contentsOf: clonedTweets)
+            self?.tableView.reloadData()
+            self?.isLoading = false
+        }
+        
         /*
         APIManager.search(searchRouterObject: searchObject!, successHandler: { (tweets) in
             //self.updateUI(tweets: tweets)
@@ -249,7 +264,7 @@ extension MasterViewController: UITableViewDataSource, UITableViewDelegate {
 extension MasterViewController: TweetCellDelegate {
     
     func imageLoaded(with image: UIImage?, with indexPath: IndexPath?) {
-        debugPrint("\(String(describing: image)) loaded")
+        //debugPrint("\(String(describing: image)) loaded")
     }
     
 }

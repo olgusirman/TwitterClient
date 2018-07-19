@@ -27,14 +27,14 @@ final class LoginViewController: UIViewController {
     public func login(completionHandler: @escaping (_ isSuccess: Bool,_ token: String?, _ error: Error?) -> Void) {
         
         guard let fetcher = loginFetcher else { fatalError("Missing dependencies") }
-        fetcher.authentication { (authToken, dataResponse, error) in
+        fetcher.authentication { [weak self] (authToken, dataResponse, error) in
             
             if let error = error {
-                self.loginButton.isEnabled = true
+                self?.loginButton.isEnabled = true
                 completionHandler(false, nil, error)
                 return
             }
-            self.loginButton.isEnabled = true
+            self?.loginButton.isEnabled = true
             completionHandler(true, authToken, nil)
         }
     }

@@ -47,14 +47,14 @@ extension Resolvable {
 }
 
 // TODO: later use generic fetcher protocol to use TweetFetcher struct
-protocol TweetFetcher {
+protocol TweetFetcher: Resolvable {
     typealias handler = ([Tweet]?, _ dataResponse: DataResponse<Any>, Swift.Error?) -> Void
     func search( searchRouterObject: SearchRouterObject, completionHandler : @escaping handler)
 }
 
 // TODO: Create generic Fechter class,
 // Bunu struct yaparsam resovler da self kullanamıyorum. Buna bir çözüm bulmak lazım
-struct MasterViewControllerTweetFetcher: TweetFetcher, Resolvable {
+struct MasterViewControllerTweetFetcher: TweetFetcher {
     
     // MARK: Private Initializer property
     private let networking: AlamoNetworking
@@ -66,13 +66,13 @@ struct MasterViewControllerTweetFetcher: TweetFetcher, Resolvable {
     
     func search(searchRouterObject: SearchRouterObject, completionHandler: @escaping handler ) {
         
-        networking.request(use: Router.search(searchRouterObject: searchRouterObject)).responseJSON { (dataResponse) in
+        networking.request(use: Router.search(searchRouterObject: searchRouterObject)).responseJSON { [self] (dataResponse) in
             
             // Handle generic error
             ErrorManager.error(with: dataResponse)
             
             switch dataResponse.result {
-            case .success: ()
+            case .success:
                 
                 if let object = self.resolve(resolvedObject: BaseObject.self, dataResponse: dataResponse) {
                     completionHandler(object.statuses, dataResponse, nil)
