@@ -34,6 +34,7 @@
 		1AC73EE920BDE485007D07B0 /* DataRequestExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC73EE820BDE485007D07B0 /* DataRequestExtension.swift */; };
 		1AC73EEB20BDE4E4007D07B0 /* BackendError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC73EEA20BDE4E4007D07B0 /* BackendError.swift */; };
 		393E451E6AE4E8D87690D8F1 /* Pods_VNGRSTwitterClientTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71CA060F729E442E16AC4B2D /* Pods_VNGRSTwitterClientTests.framework */; };
+		7D2C72BC20FF47B2006DE2E0 /* ViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2C72BB20FF47B2006DE2E0 /* ViewControllerExtensions.swift */; };
 		7DA2B0D420C2182D008657F4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA2B0D320C2182D008657F4 /* User.swift */; };
 		7DA2B0D720C2A30B008657F4 /* UserProfileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA2B0D620C2A30B008657F4 /* UserProfileImageView.swift */; };
 		7DA2B0D920C2A4D3008657F4 /* Roundable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA2B0D820C2A4D3008657F4 /* Roundable.swift */; };
@@ -111,6 +112,7 @@
 		6755D19E9ED0B7B2FA51E320 /* Pods_VNGRSTwitterClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VNGRSTwitterClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		71CA060F729E442E16AC4B2D /* Pods_VNGRSTwitterClientTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VNGRSTwitterClientTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A975B633BD7812AD1060150 /* Pods-VNGRSTwitterClient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VNGRSTwitterClient.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VNGRSTwitterClient/Pods-VNGRSTwitterClient.debug.xcconfig"; sourceTree = "<group>"; };
+		7D2C72BB20FF47B2006DE2E0 /* ViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtensions.swift; sourceTree = "<group>"; };
 		7DA2B0D320C2182D008657F4 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		7DA2B0D620C2A30B008657F4 /* UserProfileImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileImageView.swift; sourceTree = "<group>"; };
 		7DA2B0D820C2A4D3008657F4 /* Roundable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Roundable.swift; sourceTree = "<group>"; };
@@ -373,6 +375,7 @@
 				7DA2B0DA20C2BE37008657F4 /* StringExtensions.swift */,
 				7DA2B0DC20C2C09B008657F4 /* ArrayExtension.swift */,
 				7DA2B11820C7523B008657F4 /* UIFontExtension.swift */,
+				7D2C72BB20FF47B2006DE2E0 /* ViewControllerExtensions.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -477,6 +480,7 @@
 				1A31B77820AE25EB004A7E06 /* Frameworks */,
 				1A31B77920AE25EB004A7E06 /* Resources */,
 				67FED7BB73998EB03D67FF89 /* [CP] Embed Pods Frameworks */,
+				AB4534A825EE29F604370481 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -496,6 +500,7 @@
 				1A31B78E20AE25EC004A7E06 /* Frameworks */,
 				1A31B78F20AE25EC004A7E06 /* Resources */,
 				046D24E05D44E7F94F4E1AE8 /* [CP] Embed Pods Frameworks */,
+				F865526D6D6C204E8E518EF4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -515,6 +520,8 @@
 				1A31B79820AE25EC004A7E06 /* Sources */,
 				1A31B79920AE25EC004A7E06 /* Frameworks */,
 				1A31B79A20AE25EC004A7E06 /* Resources */,
+				670CD767DDC80C9C71BCA629 /* [CP] Embed Pods Frameworks */,
+				1A03C40D58F6B05731B97E67 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -639,6 +646,36 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		1A03C40D58F6B05731B97E67 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VNGRSTwitterClientUITests/Pods-VNGRSTwitterClientUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		670CD767DDC80C9C71BCA629 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VNGRSTwitterClientUITests/Pods-VNGRSTwitterClientUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		67FED7BB73998EB03D67FF89 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -651,6 +688,7 @@
 				"${BUILT_PRODUCTS_DIR}/AlamofireNetworkActivityIndicator/AlamofireNetworkActivityIndicator.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Swinject/Swinject.framework",
@@ -664,6 +702,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireNetworkActivityIndicator.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Swinject.framework",
@@ -711,6 +750,36 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		AB4534A825EE29F604370481 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VNGRSTwitterClient/Pods-VNGRSTwitterClient-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F865526D6D6C204E8E518EF4 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VNGRSTwitterClientTests/Pods-VNGRSTwitterClientTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -734,6 +803,7 @@
 				7DA2B0D420C2182D008657F4 /* User.swift in Sources */,
 				1AC73EE620BDE421007D07B0 /* ResponseObjectSerializable.swift in Sources */,
 				1A2046B620BF461D00ECDB87 /* Size.swift in Sources */,
+				7D2C72BC20FF47B2006DE2E0 /* ViewControllerExtensions.swift in Sources */,
 				1A31B78120AE25EC004A7E06 /* MasterViewController.swift in Sources */,
 				7DA2B0D720C2A30B008657F4 /* UserProfileImageView.swift in Sources */,
 				1A31B77F20AE25EC004A7E06 /* AppDelegate.swift in Sources */,
