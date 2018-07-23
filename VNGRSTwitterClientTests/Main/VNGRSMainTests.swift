@@ -9,7 +9,7 @@
 import XCTest
 @testable import VNGRSTwitterClient
 
-final class VNGRSMainTests: VNGRSRootTests {
+final class VNGRSMainTests: XCTestCase {
     
     // MARK - Properties
     var masterViewController: MasterViewController!

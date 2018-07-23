@@ -34,43 +34,16 @@ import SwinjectAutoregistration
 extension SwinjectStoryboard {
   @objc class func setup() {
     
-    // Generic Networking part
+    // Generic Networking part initialization
     defaultContainer.autoregister(AlamoNetworking.self, initializer: HTTPNetworking.init)
     
-    // Login
-    //defaultContainer.autoregister(LoginFetcher.self, initializer: LoginTokenFetcher.init)
-    ///
-    
+    // LoginViewController
     SwinjectStoryboard.defaultContainer.storyboardInitCompleted(LoginViewController.self) { resolver, controller in
         //c.loginFetcher = r.resolve(LoginFetcher.self)
         controller.loginFetcher = resolver ~> LoginFetcher.self
     }
-    //SwinjectStoryboard.defaultContainer.register(LoginTokenFetcher.self) { _ in  }
+    // Login Fetcher
     SwinjectStoryboard.defaultContainer.autoregister(LoginFetcher.self, initializer: LoginTokenFetcher.init)
-
-    //let storyboard1 = SwinjectStoryboard.create(name: "Login", bundle: Bundle.main)
-//    let navigationController = storyboard1.instantiateInitialViewController() as! UINavigationController
-    //navigationController.performSegue(withIdentifier: "ToStoryboard2", sender: navigationController)
-//    let loginViewController = navigationController.topViewController as! LoginViewController
-    
-    
-    ///
-//    let loginContainer = Container()
-//    loginContainer.autoregister(LoginFetcher.self, initializer: LoginTokenFetcher.init)
-    
-    //let sb = SwinjectStoryboard.create(name: "Login", bundle: nil, container: loginContainer)
-    //sb.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
-    //loginContainer.storyboardInitCompleted(UINavigationController.self) { (resolver, controller) in
-//        if let loginViewController = controller.topViewController as? LoginViewController {
-//            loginViewController.loginFetcher = resolver ~> LoginTokenFetcher.self
-//        }
-//    }
-    
-    //loginContainer.storyboardInitCompleted(LoginViewController.self) { (resolver, controller) in}
-    
-    //defaultContainer.storyboardInitCompleted(LoginViewController.self) { resolver, controller in
-        //controller.loginFetcher = resolver ~> LoginTokenFetcher.self
-    //}
     
     // Master
     SwinjectStoryboard.defaultContainer.autoregister(TweetFetcher.self, initializer: MasterViewControllerTweetFetcher.init)

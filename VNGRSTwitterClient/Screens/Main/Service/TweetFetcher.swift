@@ -7,47 +7,17 @@
 //
 
 import Foundation
-import ObjectMapper
 import Alamofire
 
 // Generic Fetcher protocol
-protocol Fetcher: Resolvable {
+protocol Fetcher {
     associatedtype T
     typealias completionHandler = (T?, _ dataResponse: DataResponse<Any>, Swift.Error?) -> Void
     func fetch( searchRouterObject: SearchRouterObject?, completionHandler : @escaping completionHandler) //TODO: Generic bir router object
 }
 
-protocol Resolvable {
-    func resolve<T: BaseMappable>( resolvedObject: T.Type,
-                                   dataResponse: DataResponse<Any>) -> T?
-    func resolve<T: Decodable>(type: T.Type, from: Data?) -> T?
-}
-
-extension Resolvable {
-    
-    func resolve<T: BaseMappable>( resolvedObject: T.Type,
-                                           dataResponse: DataResponse<Any>) -> T? {
-        
-        // Resolve mapped object
-        if let resolved = Mapper<T>().map(JSONObject: dataResponse.result.value) {
-            return resolved
-        } else {
-            debugPrint("\(T.self) item not resolved in \(#function)")
-            return nil
-        }
-    }
-    
-    func resolve<T: Decodable>(type: T.Type, from: Data?) -> T? {
-        let decoder = JSONDecoder()
-        guard let data = from,
-            let response = try? decoder.decode(type.self, from: data) else { return nil }
-        return response
-    }
-    
-}
-
 // TODO: later use generic fetcher protocol to use TweetFetcher struct
-protocol TweetFetcher: Resolvable {
+protocol TweetFetcher {
     typealias handler = ([Tweet]?, _ dataResponse: DataResponse<Any>, Swift.Error?) -> Void
     func search( searchRouterObject: SearchRouterObject, completionHandler : @escaping handler)
 }
@@ -66,7 +36,7 @@ struct MasterViewControllerTweetFetcher: TweetFetcher {
     
     func search(searchRouterObject: SearchRouterObject, completionHandler: @escaping handler ) {
         
-        networking.request(use: Router.search(searchRouterObject: searchRouterObject)).responseJSON { [self] (dataResponse) in
+        networking.request(use: Router.search(searchRouterObject: searchRouterObject)).responseJSON { (dataResponse) in
             
             // Handle generic error
             ErrorManager.error(with: dataResponse)
@@ -74,13 +44,22 @@ struct MasterViewControllerTweetFetcher: TweetFetcher {
             switch dataResponse.result {
             case .success:
                 
-                if let object = self.resolve(resolvedObject: BaseObject.self, dataResponse: dataResponse) {
+                // If you use class, you can use Resolvable protocol also. But generally codable usage is OK, so that reason no need to Object Mapper a lot.
+                /*
+                 if let resolved = Mapper<BaseObject>().map(JSONObject: dataResponse.result.value) {
+                 completionHandler(resolved.statuses, dataResponse, nil)
+                 } else {
+                 let mappedError = NSError(domain: "Mapper not mapped", code: 0, userInfo: nil)
+                 completionHandler(nil, dataResponse, mappedError)
+                 }*/
+                
+                //if let object = self.resolve(resolvedObject: BaseObject.self, dataResponse: dataResponse) {
+                //    completionHandler(object.statuses, dataResponse, nil)
+                //}
+                
+                if let object = Resolver.resolve(resolvedObject: BaseObject.self, dataResponse: dataResponse) {
                     completionHandler(object.statuses, dataResponse, nil)
                 }
-                
-                //if let base = Mapper<BaseObject>().map(JSONObject: dataResponse.result.value) {
-                //    completionHandler(base.statuses, dataResponse, nil)
-                //}
                 
             case .failure(let error):
                 completionHandler(nil, dataResponse, error)

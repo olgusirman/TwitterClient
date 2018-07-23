@@ -7,17 +7,22 @@
 //
 
 import XCTest
+import Swinject
+import SwinjectAutoregistration
+
 @testable import VNGRSTwitterClient
 
-final class VNGRSLoginTests: VNGRSRootTests {
+final class VNGRSLoginTests: XCTestCase {
     
     // MARK - Properties
-    var loginViewController: LoginViewController!
+    private var loginViewController: LoginViewController!
+    private let container = Container()
     
     // MARK: - Lifecycle
     override func setUp() {
         super.setUp()
         prepareController()
+        configureRegisteration()
     }
     
     override func tearDown() {
@@ -32,18 +37,39 @@ final class VNGRSLoginTests: VNGRSRootTests {
         let navigationController = storyboard.instantiateInitialViewController() as! UINavigationController
         self.loginViewController = navigationController.viewControllers.first as! LoginViewController
         _ = loginViewController.view // To call viewDidLoad
+        
     }
     
-    // MARK: - Tests
-
+    func configureRegisteration() {
+        
+        container.autoregister(AlamoNetworking.self, initializer: HTTPNetworking.init)
+        
+        // LoginViewController
+        container.storyboardInitCompleted(LoginViewController.self) { resolver, controller in
+            //c.loginFetcher = r.resolve(LoginFetcher.self)
+            controller.loginFetcher = resolver ~> LoginFetcher.self
+        }
+        // Login Fetcher
+        container.autoregister(LoginFetcher.self, initializer: LoginTokenFetcher.init)
+        
+    }
+    
+    // MARK: - Registrations
+    
+    private func testLoginFectherRegistration() {
+        XCTAssertNotNil(container.resolve(LoginFetcher.self), "Injection handled in LoginViewController")
+    }
+    
+    // MARK: - Login Tests
+    
     func testLoginIsSuccesfull() {
         
         // given
         let expectation = self.expectation(description: "Expected load auth from tweet to fail")
         
         // when
-        loginViewController.login { isSuccess, token in
-            XCTAssert(isSuccess, "Login is successfull, auth token ")
+        loginViewController.login { isSuccess, token, error  in
+            XCTAssert(isSuccess, "Login is successfull, auth token \(String(describing: error?.localizedDescription))")
             XCTAssertNotNil(token, "There is a bearer auth token")
             expectation.fulfill()
         }

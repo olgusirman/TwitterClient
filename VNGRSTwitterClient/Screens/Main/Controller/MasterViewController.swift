@@ -232,7 +232,7 @@ extension MasterViewController {
         isLoading = true
         fetcher.search(searchRouterObject: searchObject!) { [weak self] (tweets, dataResponse, error) in
             
-            guard let tweets = tweets, error == nil else {
+            guard let tweets = tweets, error == nil && tweets.count > 0 else {
                 //error occured
                 self?.updateUI()
                 return

@@ -46,12 +46,13 @@
 		7DA2B10520C42DB4008657F4 /* Sizes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA2B10420C42DB4008657F4 /* Sizes.swift */; };
 		7DA2B10B20C49E2E008657F4 /* VNGRSLoginTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA2B10A20C49E2E008657F4 /* VNGRSLoginTests.swift */; };
 		7DA2B10F20C4A71C008657F4 /* VNGRSMainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA2B10E20C4A71C008657F4 /* VNGRSMainTests.swift */; };
-		7DA2B11220C4A762008657F4 /* VNGRSRootTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA2B11120C4A762008657F4 /* VNGRSRootTests.swift */; };
 		7DA2B11720C7321D008657F4 /* TweetCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA2B11620C7321D008657F4 /* TweetCellDelegate.swift */; };
 		7DA2B11920C7523B008657F4 /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA2B11820C7523B008657F4 /* UIFontExtension.swift */; };
 		B17C3576CED1522A8D6FA130 /* Pods_VNGRSTwitterClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6755D19E9ED0B7B2FA51E320 /* Pods_VNGRSTwitterClient.framework */; };
 		B4587B0F3C80D55713879F65 /* Pods_VNGRSTwitterClientUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7F03AE51300769B34826706 /* Pods_VNGRSTwitterClientUITests.framework */; };
 		C95E4A3020F3B70A00EC0579 /* TweetFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95E4A2F20F3B70A00EC0579 /* TweetFetcher.swift */; };
+		C971C41E2106203300430E09 /* Resolvable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C971C41D2106203300430E09 /* Resolvable.swift */; };
+		C971C421210622CA00430E09 /* Resolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = C971C420210622CA00430E09 /* Resolver.swift */; };
 		C97646EE20F4CF380087D528 /* LoginFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97646ED20F4CF380087D528 /* LoginFetcher.swift */; };
 		C97646F120F4DA370087D528 /* SwinjectStoryboard+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97646F020F4DA370087D528 /* SwinjectStoryboard+Extension.swift */; };
 /* End PBXBuildFile section */
@@ -124,13 +125,14 @@
 		7DA2B10420C42DB4008657F4 /* Sizes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sizes.swift; sourceTree = "<group>"; };
 		7DA2B10A20C49E2E008657F4 /* VNGRSLoginTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VNGRSLoginTests.swift; sourceTree = "<group>"; };
 		7DA2B10E20C4A71C008657F4 /* VNGRSMainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VNGRSMainTests.swift; sourceTree = "<group>"; };
-		7DA2B11120C4A762008657F4 /* VNGRSRootTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VNGRSRootTests.swift; sourceTree = "<group>"; };
 		7DA2B11620C7321D008657F4 /* TweetCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetCellDelegate.swift; sourceTree = "<group>"; };
 		7DA2B11820C7523B008657F4 /* UIFontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontExtension.swift; sourceTree = "<group>"; };
 		916E1E79D4AC046172EF3706 /* Pods-VNGRSTwitterClientTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VNGRSTwitterClientTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VNGRSTwitterClientTests/Pods-VNGRSTwitterClientTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A169C5C159CC922AB3C7C381 /* Pods-VNGRSTwitterClientTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VNGRSTwitterClientTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-VNGRSTwitterClientTests/Pods-VNGRSTwitterClientTests.release.xcconfig"; sourceTree = "<group>"; };
 		C7F03AE51300769B34826706 /* Pods_VNGRSTwitterClientUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VNGRSTwitterClientUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C95E4A2F20F3B70A00EC0579 /* TweetFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetFetcher.swift; sourceTree = "<group>"; };
+		C971C41D2106203300430E09 /* Resolvable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resolvable.swift; sourceTree = "<group>"; };
+		C971C420210622CA00430E09 /* Resolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resolver.swift; sourceTree = "<group>"; };
 		C97646ED20F4CF380087D528 /* LoginFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFetcher.swift; sourceTree = "<group>"; };
 		C97646F020F4DA370087D528 /* SwinjectStoryboard+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SwinjectStoryboard+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -169,10 +171,13 @@
 				1A2046B720BF56D400ECDB87 /* BaseObject.swift */,
 				1A2046B120BF458B00ECDB87 /* Entity.swift */,
 				1A2046B320BF45DA00ECDB87 /* Media.swift */,
+				7DA2B0FE20C40673008657F4 /* SearchResultType.swift */,
 				1A2046B520BF461D00ECDB87 /* Size.swift */,
+				7DA2B10420C42DB4008657F4 /* Sizes.swift */,
+				7DA2B10220C42ABF008657F4 /* SizeType.swift */,
 				1A2046A520BF397600ECDB87 /* Tweet.swift */,
 				7DA2B0D320C2182D008657F4 /* User.swift */,
-				7DA2B10420C42DB4008657F4 /* Sizes.swift */,
+				C9AA9F2A2100835100A68C7E /* Router */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -237,9 +242,8 @@
 		1A31B79420AE25EC004A7E06 /* VNGRSTwitterClientTests */ = {
 			isa = PBXGroup;
 			children = (
-				7DA2B11020C4A74A008657F4 /* Root */,
-				7DA2B10D20C4A6F0008657F4 /* Main */,
 				7DA2B10C20C4A6E7008657F4 /* Login */,
+				7DA2B10D20C4A6F0008657F4 /* Main */,
 				1A31B79720AE25EC004A7E06 /* Info.plist */,
 			);
 			path = VNGRSTwitterClientTests;
@@ -267,6 +271,7 @@
 		1A36788920C5DD7C0058B668 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				1A31B77E20AE25EC004A7E06 /* AppDelegate.swift */,
 				1AAC9EBD20B34ED300DA4723 /* Login */,
 				1A58801B20BC99140050315C /* Main */,
 			);
@@ -328,6 +333,7 @@
 			children = (
 				1AC73EE520BDE421007D07B0 /* ResponseObjectSerializable.swift */,
 				7DA2B0D820C2A4D3008657F4 /* Roundable.swift */,
+				C971C41D2106203300430E09 /* Resolvable.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -335,7 +341,6 @@
 		1AAC9EC820B3659400DA4723 /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
-				1A31B77E20AE25EC004A7E06 /* AppDelegate.swift */,
 				C97646EF20F4DA1E0087D528 /* Dependencies */,
 				1AAC9EC920B365BF00DA4723 /* Router */,
 				1AAC9EC320B362F700DA4723 /* Shared */,
@@ -358,12 +363,10 @@
 		1AAC9ED220B3694C00DA4723 /* Objects */ = {
 			isa = PBXGroup;
 			children = (
+				C971C41F210622BC00430E09 /* Helper */,
+				C9AA9F2B2100837900A68C7E /* Service */,
 				1A2046BA20BF571300ECDB87 /* Auth */,
 				1A2046B920BF570D00ECDB87 /* Search */,
-				1AAC9ED320B3698700DA4723 /* SearchRouterObject.swift */,
-				1AC73EEA20BDE4E4007D07B0 /* BackendError.swift */,
-				7DA2B0FE20C40673008657F4 /* SearchResultType.swift */,
-				7DA2B10220C42ABF008657F4 /* SizeType.swift */,
 			);
 			path = Objects;
 			sourceTree = "<group>";
@@ -418,14 +421,6 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
-		7DA2B11020C4A74A008657F4 /* Root */ = {
-			isa = PBXGroup;
-			children = (
-				7DA2B11120C4A762008657F4 /* VNGRSRootTests.swift */,
-			);
-			path = Root;
-			sourceTree = "<group>";
-		};
 		7DA2B11320C731FF008657F4 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
@@ -452,6 +447,14 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
+		C971C41F210622BC00430E09 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				C971C420210622CA00430E09 /* Resolver.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		C97646EC20F4CF250087D528 /* Service */ = {
 			isa = PBXGroup;
 			children = (
@@ -468,6 +471,22 @@
 			path = Dependencies;
 			sourceTree = "<group>";
 		};
+		C9AA9F2A2100835100A68C7E /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				1AAC9ED320B3698700DA4723 /* SearchRouterObject.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		C9AA9F2B2100837900A68C7E /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				1AC73EEA20BDE4E4007D07B0 /* BackendError.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -480,7 +499,6 @@
 				1A31B77820AE25EB004A7E06 /* Frameworks */,
 				1A31B77920AE25EB004A7E06 /* Resources */,
 				67FED7BB73998EB03D67FF89 /* [CP] Embed Pods Frameworks */,
-				AB4534A825EE29F604370481 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -500,7 +518,6 @@
 				1A31B78E20AE25EC004A7E06 /* Frameworks */,
 				1A31B78F20AE25EC004A7E06 /* Resources */,
 				046D24E05D44E7F94F4E1AE8 /* [CP] Embed Pods Frameworks */,
-				F865526D6D6C204E8E518EF4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -520,8 +537,6 @@
 				1A31B79820AE25EC004A7E06 /* Sources */,
 				1A31B79920AE25EC004A7E06 /* Frameworks */,
 				1A31B79A20AE25EC004A7E06 /* Resources */,
-				670CD767DDC80C9C71BCA629 /* [CP] Embed Pods Frameworks */,
-				1A03C40D58F6B05731B97E67 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -617,11 +632,13 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-VNGRSTwitterClientTests/Pods-VNGRSTwitterClientTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Swinject/Swinject.framework",
 				"${BUILT_PRODUCTS_DIR}/SwinjectAutoregistration/SwinjectAutoregistration.framework",
+				"${BUILT_PRODUCTS_DIR}/SwinjectStoryboard/SwinjectStoryboard.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Swinject.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwinjectAutoregistration.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwinjectStoryboard.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -644,36 +661,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		1A03C40D58F6B05731B97E67 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VNGRSTwitterClientUITests/Pods-VNGRSTwitterClientUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		670CD767DDC80C9C71BCA629 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VNGRSTwitterClientUITests/Pods-VNGRSTwitterClientUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		67FED7BB73998EB03D67FF89 /* [CP] Embed Pods Frameworks */ = {
@@ -750,36 +737,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		AB4534A825EE29F604370481 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VNGRSTwitterClient/Pods-VNGRSTwitterClient-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F865526D6D6C204E8E518EF4 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VNGRSTwitterClientTests/Pods-VNGRSTwitterClientTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -810,6 +767,7 @@
 				1AC73EE420BDE178007D07B0 /* AuthObject.swift in Sources */,
 				7DA2B10120C4258F008657F4 /* TweetImageView.swift in Sources */,
 				7DA2B11720C7321D008657F4 /* TweetCellDelegate.swift in Sources */,
+				C971C421210622CA00430E09 /* Resolver.swift in Sources */,
 				1A2046BE20BF601400ECDB87 /* TweetCell.swift in Sources */,
 				C97646EE20F4CF380087D528 /* LoginFetcher.swift in Sources */,
 				7DA2B10320C42ABF008657F4 /* SizeType.swift in Sources */,
@@ -817,6 +775,7 @@
 				1A2046B420BF45DA00ECDB87 /* Media.swift in Sources */,
 				7DA2B0FF20C40673008657F4 /* SearchResultType.swift in Sources */,
 				1AC73EEB20BDE4E4007D07B0 /* BackendError.swift in Sources */,
+				C971C41E2106203300430E09 /* Resolvable.swift in Sources */,
 				7DA2B0DB20C2BE37008657F4 /* StringExtensions.swift in Sources */,
 				C97646F120F4DA370087D528 /* SwinjectStoryboard+Extension.swift in Sources */,
 				C95E4A3020F3B70A00EC0579 /* TweetFetcher.swift in Sources */,
@@ -832,7 +791,6 @@
 			files = (
 				7DA2B10B20C49E2E008657F4 /* VNGRSLoginTests.swift in Sources */,
 				7DA2B10F20C4A71C008657F4 /* VNGRSMainTests.swift in Sources */,
-				7DA2B11220C4A762008657F4 /* VNGRSRootTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

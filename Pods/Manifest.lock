@@ -29,6 +29,20 @@ DEPENDENCIES:
   - SwinjectAutoregistration
   - SwinjectStoryboard
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - AlamofireImage
+    - AlamofireNetworkActivityIndicator
+    - Kingfisher
+    - ObjectMapper
+    - ReachabilitySwift
+    - RxCocoa
+    - RxSwift
+    - Swinject
+    - SwinjectAutoregistration
+    - SwinjectStoryboard
+
 SPEC CHECKSUMS:
   Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
   AlamofireImage: 3b35b586853abaf94ca1250f4e94cff3c21a4c0d
@@ -42,6 +56,6 @@ SPEC CHECKSUMS:
   SwinjectAutoregistration: d06b56bd8f912b9fb9c59c15181342558a734b1b
   SwinjectStoryboard: ad2529218a1504cc888040ee56c13d7cb1cc7998
 
-PODFILE CHECKSUM: a831137488e355dac38e87ecd762d5b057d00db7
+PODFILE CHECKSUM: dfdda8374c486e8e76fa9552fa4f5d3543de2aac
 
-COCOAPODS: 1.3.1
+COCOAPODS: 1.5.3

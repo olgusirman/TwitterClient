@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7BA1ACFE375AD86376BB63305DDD66A9"
-               BuildableName = "Pods_VNGRSTwitterClient.framework"
-               BlueprintName = "Pods-VNGRSTwitterClient"
+               BlueprintIdentifier = "C33A4B1E1F99BB1ACE3A80FD16507EFB"
+               BuildableName = "Reachability.framework"
+               BlueprintName = "ReachabilitySwift"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "7BA1ACFE375AD86376BB63305DDD66A9"
-            BuildableName = "Pods_VNGRSTwitterClient.framework"
-            BlueprintName = "Pods-VNGRSTwitterClient"
+            BlueprintIdentifier = "C33A4B1E1F99BB1ACE3A80FD16507EFB"
+            BuildableName = "Reachability.framework"
+            BlueprintName = "ReachabilitySwift"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

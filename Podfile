@@ -29,7 +29,7 @@ target 'VNGRSTwitterClient' do
     # Pods for testing
     pod 'Swinject'
     pod 'SwinjectAutoregistration'
-    #pod 'SwinjectStoryboard', '1.1.2'
+    pod 'SwinjectStoryboard'
     
   end
 
