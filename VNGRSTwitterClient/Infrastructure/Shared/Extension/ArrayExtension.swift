@@ -9,6 +9,8 @@
 import Foundation
 import RxSwift
 
+//if Tweet object is a class --> use that extension
+/*
 extension Array where Element: Tweet {
     
     func search(query: Event<String>) -> [Element] {
@@ -23,4 +25,4 @@ extension Array where Element: Tweet {
         }
     }
     
-}
+}*/

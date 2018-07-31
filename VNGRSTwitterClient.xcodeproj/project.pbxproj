@@ -53,6 +53,11 @@
 		C95E4A3020F3B70A00EC0579 /* TweetFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95E4A2F20F3B70A00EC0579 /* TweetFetcher.swift */; };
 		C971C41E2106203300430E09 /* Resolvable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C971C41D2106203300430E09 /* Resolvable.swift */; };
 		C971C421210622CA00430E09 /* Resolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = C971C420210622CA00430E09 /* Resolver.swift */; };
+		C971C423210752CF00430E09 /* BasicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C971C422210752CF00430E09 /* BasicTests.swift */; };
+		C971C42821075EFE00430E09 /* LoginAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = C971C42721075EFE00430E09 /* LoginAssembly.swift */; };
+		C971C42B21076FBF00430E09 /* MasterAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = C971C42A21076FBF00430E09 /* MasterAssembly.swift */; };
+		C971C42D2107708100430E09 /* NetworkingAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = C971C42C2107708100430E09 /* NetworkingAssembly.swift */; };
+		C971C42F210770C900430E09 /* Registerable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C971C42E210770C900430E09 /* Registerable.swift */; };
 		C97646EE20F4CF380087D528 /* LoginFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97646ED20F4CF380087D528 /* LoginFetcher.swift */; };
 		C97646F120F4DA370087D528 /* SwinjectStoryboard+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97646F020F4DA370087D528 /* SwinjectStoryboard+Extension.swift */; };
 /* End PBXBuildFile section */
@@ -133,6 +138,11 @@
 		C95E4A2F20F3B70A00EC0579 /* TweetFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetFetcher.swift; sourceTree = "<group>"; };
 		C971C41D2106203300430E09 /* Resolvable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resolvable.swift; sourceTree = "<group>"; };
 		C971C420210622CA00430E09 /* Resolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resolver.swift; sourceTree = "<group>"; };
+		C971C422210752CF00430E09 /* BasicTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicTests.swift; sourceTree = "<group>"; };
+		C971C42721075EFE00430E09 /* LoginAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAssembly.swift; sourceTree = "<group>"; };
+		C971C42A21076FBF00430E09 /* MasterAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterAssembly.swift; sourceTree = "<group>"; };
+		C971C42C2107708100430E09 /* NetworkingAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingAssembly.swift; sourceTree = "<group>"; };
+		C971C42E210770C900430E09 /* Registerable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Registerable.swift; sourceTree = "<group>"; };
 		C97646ED20F4CF380087D528 /* LoginFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFetcher.swift; sourceTree = "<group>"; };
 		C97646F020F4DA370087D528 /* SwinjectStoryboard+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SwinjectStoryboard+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -245,6 +255,7 @@
 				7DA2B10C20C4A6E7008657F4 /* Login */,
 				7DA2B10D20C4A6F0008657F4 /* Main */,
 				1A31B79720AE25EC004A7E06 /* Info.plist */,
+				C971C422210752CF00430E09 /* BasicTests.swift */,
 			);
 			path = VNGRSTwitterClientTests;
 			sourceTree = "<group>";
@@ -281,6 +292,7 @@
 		1A58801B20BC99140050315C /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				C971C42921076FB000430E09 /* Assembly */,
 				C95E4A2E20F3B6D900EC0579 /* Service */,
 				7DA2B11320C731FF008657F4 /* Protocols */,
 				7DA2B0D520C2A2FA008657F4 /* Controls */,
@@ -294,6 +306,7 @@
 		1AAC9EBD20B34ED300DA4723 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				C971C42421075CBB00430E09 /* Assembly */,
 				C97646EC20F4CF250087D528 /* Service */,
 				1AAC9EC020B34EFC00DA4723 /* Controller */,
 				1AAC9EBE20B34EDE00DA4723 /* Login.storyboard */,
@@ -334,6 +347,7 @@
 				1AC73EE520BDE421007D07B0 /* ResponseObjectSerializable.swift */,
 				7DA2B0D820C2A4D3008657F4 /* Roundable.swift */,
 				C971C41D2106203300430E09 /* Resolvable.swift */,
+				C971C42E210770C900430E09 /* Registerable.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -455,6 +469,22 @@
 			path = Helper;
 			sourceTree = "<group>";
 		};
+		C971C42421075CBB00430E09 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				C971C42721075EFE00430E09 /* LoginAssembly.swift */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		C971C42921076FB000430E09 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				C971C42A21076FBF00430E09 /* MasterAssembly.swift */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
 		C97646EC20F4CF250087D528 /* Service */ = {
 			isa = PBXGroup;
 			children = (
@@ -467,6 +497,7 @@
 			isa = PBXGroup;
 			children = (
 				C97646F020F4DA370087D528 /* SwinjectStoryboard+Extension.swift */,
+				C971C42C2107708100430E09 /* NetworkingAssembly.swift */,
 			);
 			path = Dependencies;
 			sourceTree = "<group>";
@@ -751,6 +782,7 @@
 				1AAC9EC620B3631300DA4723 /* ConstraintView.swift in Sources */,
 				1AC73EE920BDE485007D07B0 /* DataRequestExtension.swift in Sources */,
 				1AAC9EC220B34F0B00DA4723 /* LoginViewController.swift in Sources */,
+				C971C42D2107708100430E09 /* NetworkingAssembly.swift in Sources */,
 				7DA2B10520C42DB4008657F4 /* Sizes.swift in Sources */,
 				7DA2B0D920C2A4D3008657F4 /* Roundable.swift in Sources */,
 				1A2046A620BF397600ECDB87 /* Tweet.swift in Sources */,
@@ -767,6 +799,7 @@
 				1AC73EE420BDE178007D07B0 /* AuthObject.swift in Sources */,
 				7DA2B10120C4258F008657F4 /* TweetImageView.swift in Sources */,
 				7DA2B11720C7321D008657F4 /* TweetCellDelegate.swift in Sources */,
+				C971C42F210770C900430E09 /* Registerable.swift in Sources */,
 				C971C421210622CA00430E09 /* Resolver.swift in Sources */,
 				1A2046BE20BF601400ECDB87 /* TweetCell.swift in Sources */,
 				C97646EE20F4CF380087D528 /* LoginFetcher.swift in Sources */,
@@ -774,12 +807,14 @@
 				1AAC9ECE20B365D100DA4723 /* APIManager.swift in Sources */,
 				1A2046B420BF45DA00ECDB87 /* Media.swift in Sources */,
 				7DA2B0FF20C40673008657F4 /* SearchResultType.swift in Sources */,
+				C971C42821075EFE00430E09 /* LoginAssembly.swift in Sources */,
 				1AC73EEB20BDE4E4007D07B0 /* BackendError.swift in Sources */,
 				C971C41E2106203300430E09 /* Resolvable.swift in Sources */,
 				7DA2B0DB20C2BE37008657F4 /* StringExtensions.swift in Sources */,
 				C97646F120F4DA370087D528 /* SwinjectStoryboard+Extension.swift in Sources */,
 				C95E4A3020F3B70A00EC0579 /* TweetFetcher.swift in Sources */,
 				1AAC9EDA20B495AA00DA4723 /* AccessTokenAdapter.swift in Sources */,
+				C971C42B21076FBF00430E09 /* MasterAssembly.swift in Sources */,
 				1AAC9ED420B3698700DA4723 /* SearchRouterObject.swift in Sources */,
 				7DA2B0DD20C2C09B008657F4 /* ArrayExtension.swift in Sources */,
 			);
@@ -791,6 +826,7 @@
 			files = (
 				7DA2B10B20C49E2E008657F4 /* VNGRSLoginTests.swift in Sources */,
 				7DA2B10F20C4A71C008657F4 /* VNGRSMainTests.swift in Sources */,
+				C971C423210752CF00430E09 /* BasicTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

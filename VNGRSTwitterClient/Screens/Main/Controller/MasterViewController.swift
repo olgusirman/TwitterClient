@@ -306,7 +306,7 @@ extension MasterViewController: UITableViewDataSource, UITableViewDelegate {
             cell = tableView.dequeueReusableCell(withIdentifier: ControllerConstants.tweetCellIdentifier, for: indexPath) as! TweetCell
         }
         
-        let tweet = tweets[indexPath.row]
+        var tweet = tweets[indexPath.row]
         tweet.indexPath = indexPath
         cell.configure(tweet: tweet)
         cell.delegate = self

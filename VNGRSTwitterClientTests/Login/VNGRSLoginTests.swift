@@ -26,18 +26,18 @@ final class VNGRSLoginTests: XCTestCase {
     }
     
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        container.removeAll()
         super.tearDown()
     }
     
     // MARK: - Helpers
     // Prepare Helper
     private func prepareController() {
-        let storyboard = UIStoryboard(name: "Login", bundle: nil)
+        let storyboard = UIStoryboard(name: "Login", bundle: Bundle(for: type(of: self)))
         let navigationController = storyboard.instantiateInitialViewController() as! UINavigationController
-        self.loginViewController = navigationController.viewControllers.first as! LoginViewController
+        self.loginViewController = navigationController.topViewController as! LoginViewController
+        UIApplication.shared.keyWindow?.rootViewController = loginViewController
         _ = loginViewController.view // To call viewDidLoad
-        
     }
     
     func configureRegisteration() {

@@ -10,7 +10,7 @@ import Foundation
 import Alamofire
 
 protocol LoginFetcher {
-    typealias handler = (_ accessToken: String?, _ dataResponse: DataResponse<AuthObject>, Swift.Error?) -> Void
+    typealias handler = (_ accessToken: String?, Swift.Error?) -> Void
     func authentication( completionHandler : @escaping handler)
 }
 
@@ -39,7 +39,7 @@ struct LoginTokenFetcher: LoginFetcher {
                     debugPrint("Successfully Authhenticate 👍")
                     UserDefaults.standard.set(accessToken, forKey: APIConstants.accessToken)
                     //successHandler(accessToken)
-                    completionHandler(accessToken, dataResponse, nil)
+                    completionHandler(accessToken, nil)
                     
                 } else {
                     //not Mapped
@@ -49,7 +49,7 @@ struct LoginTokenFetcher: LoginFetcher {
                 //}
                 
             case .failure(let error):
-                completionHandler(nil, dataResponse, error)
+                completionHandler(nil, error)
             }
         }
     }

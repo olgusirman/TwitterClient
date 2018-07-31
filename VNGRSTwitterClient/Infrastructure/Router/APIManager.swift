@@ -11,6 +11,7 @@ import Alamofire
 import ObjectMapper
 
 protocol AlamoNetworking {
+    var manager: SessionManager { get }
     func request(use urlRequest: URLRequestConvertible) -> DataRequest
 }
 
@@ -25,7 +26,7 @@ final public class HTTPNetworking: AlamoNetworking {
     // MARK: - Properties
     
     // MARK: Private Properties
-    fileprivate var manager: Alamofire.SessionManager = {
+    var manager: Alamofire.SessionManager = {
         let manager = SessionManager.default
         if let authToken = UserDefaults.standard.string(forKey: APIConstants.accessToken) { // Use keychain for that "access_token"
             manager.adapter = AccessTokenAdapter(accessToken: authToken)

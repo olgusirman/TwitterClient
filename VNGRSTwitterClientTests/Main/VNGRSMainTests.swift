@@ -7,21 +7,27 @@
 //
 
 import XCTest
+import Swinject
+import SwinjectAutoregistration
+import SwinjectStoryboard
+
 @testable import VNGRSTwitterClient
 
 final class VNGRSMainTests: XCTestCase {
     
     // MARK - Properties
     var masterViewController: MasterViewController!
+    private let container = Container()
     
     // MARK: - Lifecycle
     override func setUp() {
         super.setUp()
         prepareController()
+        configureRegisteration()
     }
     
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        container.removeAll()
         super.tearDown()
     }
     
@@ -32,21 +38,48 @@ final class VNGRSMainTests: XCTestCase {
         let splitViewController = storyboard.instantiateInitialViewController() as! UISplitViewController
         let navigationController = splitViewController.viewControllers.first as! UINavigationController
         self.masterViewController = navigationController.viewControllers.first as! MasterViewController
-        _ = masterViewController.view // To call viewDidLoad
+        //_ = masterViewController.view // To call viewDidLoad // her türlü viewDidLoad çağırılıyor.
+    }
+    
+    func configureRegisteration() {
+        
+        /*
+         container.autoregister(AlamoNetworking.self, initializer: HTTPNetworking.init)
+         
+         // Master
+         SwinjectStoryboard.defaultContainer.autoregister(TweetFetcher.self, initializer: MasterViewControllerTweetFetcher.init)
+         SwinjectStoryboard.defaultContainer.storyboardInitCompleted(MasterViewController.self) { resolver, controller in
+         controller.fetcher = resolver ~> TweetFetcher.self
+         }*/
+        
+        NetworkingAssembly.register(container: container)
+        MasterAssembly.register(container: SwinjectStoryboard.defaultContainer)
+        
     }
     
     // MARK: - Tests
     
-    func testLoginIsSuccesfull() {
+    func testCanFetchTweets() {
         
         // given
-        let expectation = self.expectation(description: "Expected load tweets from api fail")
+        let expectation = self.expectation(description: "Expected load tweets from fetcher")
+        // Create a searchObject and fetch tweets
+        guard let searchObject = SearchRouterObject(query: "wwdc2018") else { debugPrint("searchObject query parameters is nil \(#function)"); return }
         
         // when
-        masterViewController.fetchTweets(searchText: "wwdc2018") { (isSuccess, tweets) in
-            XCTAssert(isSuccess, "Tweets fetched is successfull")
+        guard let fetcher = masterViewController.fetcher else { fatalError("Missing dependencies") }
+        fetcher.search(searchRouterObject: searchObject) { (fetchedTweets, dataResponse, error) in
+            
+            guard let tweets = fetchedTweets, error == nil else {
+                //error occured
+                XCTAssertNotNil(fetchedTweets, "There should be a tweets")
+                XCTAssert(false, "Tweets fetched is successfull")
+                expectation.fulfill()
+                return
+            }
+            
             XCTAssertNotNil(tweets, "There should be a tweets")
-            //XCTAssertGreaterThanOrEqual(tweets!.count, 0, "Tweets should be not nil and must have tweets")
+            XCTAssert(true, "Tweets fetched is successfull")
             expectation.fulfill()
         }
         

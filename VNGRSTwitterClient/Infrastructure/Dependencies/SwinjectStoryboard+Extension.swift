@@ -34,6 +34,14 @@ import SwinjectAutoregistration
 extension SwinjectStoryboard {
   @objc class func setup() {
     
+    // Networking
+    NetworkingAssembly.register(container: defaultContainer)
+    
+    // Screens
+    LoginAssembly.register(container: SwinjectStoryboard.defaultContainer)
+    MasterAssembly.register(container: SwinjectStoryboard.defaultContainer)
+    
+    /*
     // Generic Networking part initialization
     defaultContainer.autoregister(AlamoNetworking.self, initializer: HTTPNetworking.init)
     
@@ -50,6 +58,7 @@ extension SwinjectStoryboard {
     SwinjectStoryboard.defaultContainer.storyboardInitCompleted(MasterViewController.self) { resolver, controller in
         controller.fetcher = resolver ~> TweetFetcher.self
     }
+    */
     
   }
 }
