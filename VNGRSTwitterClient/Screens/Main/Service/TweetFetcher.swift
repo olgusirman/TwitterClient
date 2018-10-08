@@ -13,7 +13,7 @@ import Alamofire
 protocol Fetcher {
     associatedtype FetcherElement: Any
     typealias completionHandler = (FetcherElement?, _ dataResponse: DataResponse<Any>, Swift.Error?) -> Void
-    //func fetch( searchRouterObject: SearchRouterObject?, completionHandler : @escaping completionHandler) //TODO: Generic bir router object
+    func search( searchRouterObject: SearchRouterObject, completionHandler : @escaping completionHandler) //TODO: Generic bir router object
 }
 
 // TODO: later use generic fetcher protocol to use TweetFetcher struct
@@ -22,8 +22,8 @@ protocol TweetFetcher {
     func search(searchRouterObject: SearchRouterObject, completionHandler : @escaping handler)
 }
 
-struct MasterViewControllerTweetFetcherViewModel: TweetFetcher {
-    
+struct MasterViewControllerTweetFetcherViewModel: Fetcher {
+        
     // MARK: Private Initializer property
     private let networking: AlamoNetworking
     

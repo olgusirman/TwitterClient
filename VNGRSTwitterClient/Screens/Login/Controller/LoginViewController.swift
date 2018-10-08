@@ -27,7 +27,7 @@ final class LoginViewController: UIViewController {
     public func login(completionHandler: @escaping (_ isSuccess: Bool,_ token: String?, _ error: Error?) -> Void) {
         
         guard let fetcher = loginFetcher else { fatalError("Missing dependencies") }
-        fetcher.authentication { [weak self] (authToken, dataResponse, error) in
+        fetcher.authentication { [weak self] (authToken, error) in
             
             if let error = error {
                 self?.loginButton.isEnabled = true

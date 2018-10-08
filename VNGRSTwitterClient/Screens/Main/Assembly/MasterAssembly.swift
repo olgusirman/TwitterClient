@@ -14,7 +14,7 @@ import SwinjectStoryboard
 struct MasterAssembly: Registerable {
     
     static func register(container: Container) {
-        container.autoregister(TweetFetcher.self, initializer: MasterViewControllerTweetFetcherViewModel.init)
+        container.autoregister(TweetFetcher.self, initializer: Fetcher.init)
         container.storyboardInitCompleted(MasterViewController.self) { resolver, controller in
             controller.fetcher = resolver ~> TweetFetcher.self //same as controller.fetcher = resolver.resolve(TweetFetcher.self)
         }
